@@ -1,0 +1,16 @@
+.DS_Store
+
+# Build artifacts
+*.o
+src/my_program
+
+# Runtime logs
+*.log
+
+# Experiment outputs
+src/metrics_*.csv
+src/trial*/
+
+# Plot outputs
+src/plots/combined_output.txt
+src/plots/.throughput_latency_vs_keys.png

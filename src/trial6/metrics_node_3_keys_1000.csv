@@ -1,2 +1,0 @@
-node_id,key_range,throughput_ops_sec,avg_latency_us,total_ops
-3,1000,1291.44,759.025,10
