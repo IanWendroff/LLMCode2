@@ -24,7 +24,7 @@ fi
 
 MODE="$1"
 SSH_USER="$2"
-BASE_DIR="/Users/ianwendroff/Downloads/hw2 copy/src2"
+BASE_DIR="/home/itw227/CSE376/LLMCode2/src2"
 HOSTS=("128.180.120.65" "128.180.120.66" "128.180.120.77" "128.180.120.68")
 
 case "$MODE" in
