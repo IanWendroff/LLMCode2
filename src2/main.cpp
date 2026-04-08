@@ -59,7 +59,7 @@ void worker(int operations, int key_range){
             kvs.reserve(count); //allocate mem
 
             for (int j = 0; j<count;j++){
-                int k = key_dist(rng); //problem: didn't check that it isnt duplicate key. update: fixed
+                int k = key_dist(rng); 
                 bool duplicate = false;
                 for (auto &p : kvs){
                     if (p.first == k){
@@ -83,7 +83,6 @@ void worker(int operations, int key_range){
                 total_ops++;
             }
             else{
-                // std::cout << "Fail multiputting " << kv_string << "\n";
                 ++multiput_fail;
             }
         }
@@ -102,7 +101,6 @@ void worker(int operations, int key_range){
             std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count();
 
         total_latency_ns += latency;
-        // total_ops++; //moved to only count successes.. idk. and count all gets
     }
 }
 
@@ -133,7 +131,7 @@ int main(int argc, char** argv)
     distributed_barrier();
     std::cout << "[Node " << self_id << "] Passed barrier\n";
 
-    // std::vector<int> key_ranges = {1000, 10000};
+    // std::vector<int> key_ranges = {10, 100, 1000, 10000};
     std::vector<int> key_ranges = {100};
 
     for (int key_range : key_ranges) {
@@ -172,7 +170,7 @@ int main(int argc, char** argv)
         }
 
         std::cout << "Node " << self_id
-                  << " finished key_range TEST " << key_range << "\n";
+                  << " finished key_range " << key_range << "\n";
                   
 
         std::ofstream out("metrics_node_" + std::to_string(self_id) +
@@ -188,8 +186,6 @@ int main(int argc, char** argv)
         std::cout << "Node " << self_id
                   << " wrote to file\n";
         
-        // distributed_barrier();
-        std::this_thread::sleep_for(std::chrono::seconds(10));
         out.close();
         std::cout << "Node " << self_id
                   << " closed file\n";

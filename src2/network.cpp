@@ -55,24 +55,10 @@ int connect_to(const std::string& ip, int port){ //client side
     addr.sin_port = htons(port);
     inet_pton(AF_INET, ip.c_str(), &addr.sin_addr);
 
-    // fcntl(fd, F_SETFL, O_NONBLOCK);//set socket nonblocking for retry loop in dist barrier
-
     if (connect(fd, (sockaddr*)&addr, sizeof(addr)) < 0) {
-        // if (errno != EINPROGRESS) { // connection failed, return -1
             close(fd);
             return -1;
-        // }
     }
-
-    // fd_set wfds;
-    // FD_ZERO(&wfds);
-    // FD_SET(fd, &wfds);
-    // timeval tv{0, 500000}; //.5 sec
-    // if (select(fd + 1, nullptr, &wfds, nullptr, &tv) <= 0) {
-    //     close(fd);
-    //     return -1;
-    // }
-
     return fd;
 
 }
@@ -179,10 +165,12 @@ bool recv_line_timeout(int sock, std::string& line, int timeout_sec) {
 
 
 void load_config(){
-    nodes[0] = {"128.180.120.95", 6005}; //io: 128.180.120.77, neptune: 128.180.120.95
-    nodes[1] = {"128.180.120.73", 6005}; //eris: 128.180.120.73
-    nodes[2] = {"128.180.120.86", 6005}; //saturn . puck: 128.180.120.86
-    nodes[3] = {"128.180.120.76", 6005}; // callisto: 128.180.120.67 . iapetus: 128.180.120.76
-    // nodes[3] = {"127.0.0.1", 5003};
-}
+    // Update these to the 4 machines/port you use on Sunlab, per readme.md.
+    // Using 4 nodes as required by NUM_NODES.
+    nodes[0] = {"128.180.120.65", 4040};
+    nodes[1] = {"128.180.120.66", 4040};
+    nodes[2] = {"128.180.120.77", 4040};
+    nodes[3] = {"128.180.120.68", 4040};
 
+    // Spare machine from your list (swap in if one above is busy): 128.180.120.69
+}

@@ -10,14 +10,9 @@
 #include <atomic>
 
 std::mutex barrier_mtx;
-// std::condition_variable barrier_cv;
 int barrier_ready = 0;
 int barrier_generation = 0; //for reuse so we can reset
 
-// extern int self_id;
-// extern NodeInfo nodes[NUM_NODES];
-
-//client-side dist barrier
 
 void distributed_barrier()
 {
@@ -28,7 +23,6 @@ void distributed_barrier()
             return barrier_ready >= NUM_NODES - 1;
         });
         return;
-        // std::this_thread::sleep_for(std::chrono::milliseconds(1)); //todo: is this correct? or return() instead?
     }
     int sock = -1;
     while (sock < 0) {

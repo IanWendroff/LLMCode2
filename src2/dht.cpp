@@ -1,7 +1,6 @@
 #include "dht.h"
 #include "ht.h"
 #include "network.h"
-#include "locks.h"
 #include "dist_barrier.h"
 #include <vector>
 #include <algorithm>
@@ -22,7 +21,6 @@ enum class TxnStatus {
 };
 struct TxnState {
     uint64_t txn_id;   
-    // vector<pair<int, string>> writes; //kv pairs we're trying to write
     unordered_map<int, std::string> writes;
     TxnStatus status;
     vector<int> locked_keys;//keys that are locked so we know who to unlock if fail
@@ -34,38 +32,22 @@ mutex txn_table_mtx;
 
 //condition variable for barrier loop
 std::condition_variable barrier_cv;
-/*condition variable is a synchronization primitive that is used to 
-notify the other threads in a multithreading environment that the 
-shared resource is free */
-
-// std::mutex barrier_mtx;
 
 static HashTable<std::string>* local_table;  //of kv pairs on each node
-// static std::unordered_map<int, KeyLock> key_locks;
-// static std::mutex key_locks_mutex;
-
-
-
-
-
 
 KeyLock& get_lock(int key)
 {
-    std::lock_guard<std::mutex> g(key_locks_mutex); //lock guard so releases when out of scope
+    std::lock_guard<std::mutex> g(key_locks_mutex); 
     auto it = key_locks.find(key);
-    if (it == key_locks.end()){
+    if (it == key_locks.end()){ // creates if missing
         key_locks[key] = std::make_unique<KeyLock>();
         return *key_locks[key];
     }
-    return *(it->second); // creates if missing
-    //returns a poiunter to the KeyLock 
+    return *(it->second); 
+    //returns a pointer to the KeyLock 
 }
 
-
-
-
-
-//stop transactions from hanging by reaping them if too long
+//stop transactions from hanging by reaping them if too long (shouldn't be needed if everything works)
 void transaction_reaper() {
     while (true) {
         std::this_thread::sleep_for(std::chrono::seconds(5)); //runs every 5 seconds
@@ -101,7 +83,7 @@ void dht_init(int node_id)
     thread(transaction_reaper).detach(); //start reaper 
 }
 
-//todo: double check all these lock acquire functs
+//acquire reader lock
 void acquire_read(int key)
 {
     KeyLock& lock = get_lock(key);
@@ -119,6 +101,7 @@ void release_read(int key)
         lock.cv.notify_all();
 }
 
+//acquire writer lock (exclusive)
 void acquire_write(int key)
 {
     KeyLock& lock = get_lock(key);
@@ -165,33 +148,6 @@ int owner_node(int key)
     return hash_function(key) % NUM_NODES;
 }
 
-// bool dht_put(int key, const std::string& value)
-// {
-//     int owner = owner_node(key);
-
-//     if (owner == self_id) {
-//         acquire_write(key); 
-//         bool ok = ht_put(local_table, key, value);
-//         release_write(key);
-//         return ok;
-//     }
-//     //wrote to self, now repl to all other nodes:
-//     // rep_put(key, value, 1);
-//         //rep_put checks what owner node is, sends REP to all others
-
-//     int sock = connect_to(nodes[owner].ip, nodes[owner].port);
-//     if (sock < 0) return false;
-
-//     send_line(sock, "PUT " + std::to_string(key) + " " + value + "\n");
-
-//     std::string response;
-//     recv_line(sock, response);
-//     close(sock);
-
-//     return response == "OK\n";
-// }
-
-
 static std::atomic<uint8_t> local_ctr{0};
 
 uint64_t generate_txn_id(uint8_t self_id) {
@@ -206,16 +162,8 @@ uint64_t generate_txn_id(uint8_t self_id) {
 bool put_many(std::vector<std::pair<int, std::string>> vec){
     
     uint64_t txn_id = generate_txn_id(self_id); 
-    // std::cout << "Generated txn! " << to_string(txn_id) << "\n";
-        //according to chatgpt: works for a globally unique id and less likely to crash across multiple coordinators, than just doing a counter
-    
+
     sort(vec.begin(), vec.end());//so no deadlock
-
-    //todo: make vector of owners (participants unordered set or map (std::unordered_map<int, std::vector<pair<int,string>>> per_owner;)) 
-    //todo: add replicas to vector ((owner+1) % NUM_NODES)
-    //make one sock per participant . for int node_id : participants, int sock = connect_to(...)
-
-
     unordered_map<int, vector<pair<int, string>>> participants; //participating nodes(incl owners And replicas), that we need to open connections to
 
     //add kv pairs to owner and replica nodes stored in participants
@@ -228,11 +176,8 @@ bool put_many(std::vector<std::pair<int, std::string>> vec){
         }
     }
 
-    // std::cout << "Successfully stored owner and replica nodes in participants\n";
-
     unordered_map<int, int> socks; // for opening connection to each participant
     
-
     for (auto&[node, _] : participants){
         if (node == self_id) continue; //dont open socket to self bc could block if it sends prepare then calls recv and waits
         int sock = connect_to(nodes[node].ip, nodes[node].port);
@@ -242,32 +187,30 @@ bool put_many(std::vector<std::pair<int, std::string>> vec){
             }
             return false;
         }
-        socks[node] = sock;//store
+        socks[node] = sock;
     }
 
     map<int, int> ordered_socks(socks.begin(), socks.end()); //order by node so no deadlock
-    //so nodes contacted in consistent order so no cross-nose deadlock (eg node A is the replica for 2 dif owners and creates deadlock on nodes)
-
-
-    // std::cout << "Made connections to all participants! from Node " << to_string(self_id) << "\n";
+    //so nodes contacted in consistent order so no cross-nose deadlock (eg. node A is the replica for 2 dif owners and creates deadlock on nodes)
 
     //lock local keys if coordinator owns some keys
     bool all_commit = true;
     bool all_local_locked = true;
-    if (participants.count(self_id)){
+    if (participants.count(self_id)){ //if self_id is in the participants set (coordinator node is a participant)
         TxnState txn;
         txn.txn_id = txn_id;
         txn.status = TxnStatus::PREPARING;
         txn.start_time = std::chrono::steady_clock::now();
 
-        for (auto &p : participants[self_id]){ //for each pair in participants
-            if (acquire_write_timeout(p.first, 1000)){ //todo: revert. also todo: doesnt the lock go out of scope or something? or wait no it doesnt bc its unique lock
-                all_local_locked = false; //timeout occurred
+        for (auto &p : participants[self_id]){ //for each kv pair in participants
+            if (acquire_write_timeout(p.first, 1000)){ //timeout occurred
+                all_local_locked = false; 
+                all_commit = false;
                 break;
             }
             std::cout << "Acquired lock on coordinator node " << self_id << " for pair [" << p.first << ", " << p.second << "]\n";
 
-            txn.locked_keys.push_back(p.first); //why is this not accurately storing them. todo add print statements of locked keys, run with small number of ops
+            txn.locked_keys.push_back(p.first); 
             txn.writes[p.first] = p.second;
         }
         std::cout << "Node " << self_id << ", transaction " << txn.txn_id << " has locked keys:";
@@ -276,10 +219,11 @@ bool put_many(std::vector<std::pair<int, std::string>> vec){
         }
         cout << "\n";
         
-        lock_guard<mutex> lock(txn_table_mtx); //moved here so no global lock while we do timeout locks
+        
         if (all_local_locked){
+            lock_guard<mutex> lock(txn_table_mtx); 
             txn.status = TxnStatus::PREPARED;
-            transactions[txn_id] = std::move(txn); //todo: ??
+            transactions[txn_id] = std::move(txn); 
         }
         else{
             //failed to lock, release what we have and abort
@@ -294,7 +238,7 @@ bool put_many(std::vector<std::pair<int, std::string>> vec){
         }
     }
 
-    if (all_commit){ //added this on 3/18
+    if (all_commit){ 
         //now that connection to each is open, send prepare w/ kv pairs to each one: 
         for (auto &[node, sock] : ordered_socks){
             string msg = to_string(txn_id);
@@ -307,36 +251,23 @@ bool put_many(std::vector<std::pair<int, std::string>> vec){
             }
         }
     
-
-        // std::cout << "Sent PREPARE to all participants! from Node " << to_string(self_id) << "\n";
-
         //wait and collect their responses
         
         unordered_map<int, string> replies; //just for debugging
 
         for (auto &[node, sock] : ordered_socks){
             string response;
-            if (!recv_line_timeout(sock, response, 5)){ //wait 2 seconds for response.. should i wait longer?
+            if (!recv_line_timeout(sock, response, 5)){ //wait 2 seconds for response
                 all_commit = false; //didnt receive reply from someone
-                continue; //so we don't try to parse the response
-                //todo: wait ?
+                continue; //don't try to parse the response
             }
             replies[node] = response;
-            if (response.rfind("VOTE_COMMIT", 0) != 0){ //if there is something thats NOT a a commit
+            if (response.rfind("VOTE_COMMIT", 0) != 0){ //if there is something thats not a vote_commit
                 all_commit = false; //if one says no, then abort
             }
         }
 
     }   
-
-    // std::cout << "Collected all responses! Node " << to_string(self_id) << "\n";
-
-    // if (all_commit){
-    //     std::cout << "this put_many is a commit!\n";
-    // }
-    // else{
-    //     std::cout << "this put_many is an ABORT!\n";
-    // }
 
     //send commit / abort to all
     for (auto &[node, sock] : ordered_socks){
@@ -345,19 +276,15 @@ bool put_many(std::vector<std::pair<int, std::string>> vec){
             if (!send_line(sock, "COMMIT "+ to_string(txn_id) + "\n")){
                 cout << "ERROR: SENDING COMMIT to node " << node << " FAILED\n";
             }
-            //lock, put, unlock if 0 in participants
         }
         else{
             cout << "SENDING abort to participant node " << node << " for txn "<< txn_id << "\n";
             if (!send_line(sock, "ABORT "  +  to_string(txn_id) + "\n")){
                 cout << "ERROR: SENDING ABORT to node " << node << " FAILED\n";
             }
-            //todo: return false? but also need to close socks
         }
     }
 
-    // std::cout << "Sent commit/abort to all participants! from Node " << to_string(self_id) << "\n";
-    
     //local puts
     if (participants.count(self_id)) {
         TxnState txn;
@@ -375,17 +302,18 @@ bool put_many(std::vector<std::pair<int, std::string>> vec){
             // Apply writes and release
 
             if (!txn.locked_keys.empty()){
-            for (int key : txn.locked_keys) {
-                std::cout << "Putting on coordinator node " << self_id << " for key [" << key << "]\n";
-                if (!ht_put(local_table, key, txn.writes[key])){
-                    all_commit = false; //locking ok but actually committing failed - key already in table
+                for (int key : txn.locked_keys) {
+                    std::cout << "Putting on coordinator node " << self_id << " for key [" << key << "]\n";
+                    if (!ht_put(local_table, key, txn.writes[key])){
+                        all_commit = false; //locking ok but actually committing failed - key already in table
+                    }
+                }
+                for (int key : txn.locked_keys) {
+                    std::cout << "Releasing lock on coordinator node " << self_id << " for key [" << key << "]\n";
+                    release_write(key); 
+                    cout << "Applied writes + Released lock on coordinator node " << self_id << " for key [" << key << "]\n";
                 }
             }
-            for (int key : txn.locked_keys) {
-                std::cout << "Releasing lock on coordinator node " << self_id << " for key [" << key << "]\n";
-                release_write(key);
-            }
-        }
 
         } else {
             // Just release
@@ -394,6 +322,7 @@ bool put_many(std::vector<std::pair<int, std::string>> vec){
                 for (int key : txn.locked_keys) {
                     std::cout << "NOT putting on coordinator node " << self_id << " for key [" << key << "], just releasing lock\n";
                     release_write(key);
+                    cout << "Not putting, so Released lock on coordinator node " << self_id << " for key [" << key << "]\n";
                 }
             }
             }
@@ -441,9 +370,6 @@ uint64_t parse_txn_id(const std::string& line){
         return -1;
     }
     size_t space2 = line.find(' ', space1+1);
-    // if (space2 == std::string::npos){ //todo: comment back in
-    //     return -1;
-    // }
 
     std::string txn_string = line.substr(space1 + 1,
     (space2 == std::string::npos) ? std::string::npos : space2 - space1 - 1);
@@ -507,7 +433,6 @@ std::optional<std::string> dht_get(int key)
 void handle_prepare(int sock, std::string line, uint64_t txn_id){
 
     vector<pair<int, string>> vec = parse_put_many(line);
-    // int parsed_txn_id = parse_txn_id(line); 
 
     sort(vec.begin(), vec.end());//sort by keys so no deadlock    
     
@@ -517,30 +442,22 @@ void handle_prepare(int sock, std::string line, uint64_t txn_id){
     for (auto p : vec){
         txn.writes.emplace(p.first, p.second);
     }
-    // txn.writes = vec; //so don't need to parse kvs from line, get from txns 
-    txn.status = TxnStatus::PREPARING; //maybe don't need to record if its preparing
+
+    txn.status = TxnStatus::PREPARING; //for debugging
     txn.start_time = chrono::steady_clock::now();
 
-    //locking all keys from msg
-    // vector<int> locked_keys;
     bool all_locked = true;
 
     for (auto pair : vec) {
         int key = pair.first;
         if ((owner_node(key) == self_id) || (((owner_node(key)+1) %NUM_NODES) == self_id)){
-            if (acquire_write_timeout(key, 1000) == true){ //true means it timed out
+            if (acquire_write_timeout(key, 1000) == true){ //true = timed out
                 all_locked = false;
                 break; //dont need to try to lock others, one fail = all fail
             }
             std::cout << "Acquired lock on participant node " << self_id << " for pair [" << pair.first << ", " << pair.second << "]\n";
-            // if (true){ //todo: revert back to writer lock
-            //     int x = 1;
-            // }
-            // else{
-                // std::lock_guard<std::mutex> lock(txn_table_mtx);
-                txn.locked_keys.push_back(key); //so we know who to unlock in case of abort
-                //changed the above to only do local locked_keys, not global. 3/18
-            // }
+
+            txn.locked_keys.push_back(key);
             std::cout << "Node " << self_id << ", transaction " << txn.txn_id << " has locked keys: ";
             if (!txn.locked_keys.empty()){
             for (auto & p : txn.locked_keys){
@@ -570,15 +487,8 @@ void handle_prepare(int sock, std::string line, uint64_t txn_id){
             std::lock_guard<std::mutex> lock(txn_table_mtx);
             transactions[txn_id].status = TxnStatus::ABORTED; //new status
             transactions[txn_id].locked_keys.clear();
-            // transactions[txn_id].locked_keys.clear();
-            // transactions.erase(txn_id);
         }
-        // for (int key : txn.locked_keys){
-        //     std::cout << "key [" << key << "] releasing lock\n";
-        //     release_write(key);
-        // }
         send_line(sock, "VOTE_ABORT " + to_string(txn_id) + "\n");
-        //actually remove it from map with transactions.erase(txn_id). after call to handle_abort
     }
 }
 
@@ -587,8 +497,7 @@ void handle_commit(int sock, uint64_t txn_id){
     
     TxnState txn;
     {
-        lock_guard<mutex> lock(txn_table_mtx); //todo: maybe bad to hold this lock so long
-        // txn = transactions[txn_id];
+        lock_guard<mutex> lock(txn_table_mtx); 
         auto it = transactions.find(txn_id);
         if (it == transactions.end()){
             std::cout << "[Node " << self_id << "] Commit failed: Unknown Txn " << txn_id << "\n";
@@ -597,46 +506,32 @@ void handle_commit(int sock, uint64_t txn_id){
         txn = it->second;
     }
 
-    
-    
-    // TxnState &txn = it->second;
-    // unordered_map<int, string> map_writes = txn.writes; //get writes from the txn node
-
     if (txn.status == TxnStatus::COMMITTED){
         return; //redundant
     }
     if (txn.status != TxnStatus::PREPARED){
-        return; // todo: or maybe check if aborted and then delete it from map??
+        return; 
     }
     if (!txn.locked_keys.empty()){
-    for (int key : txn.locked_keys) {
-        // int owner = owner_node(pair.first);
-        // if (owner+1 == self_id){ //todo: not just +1
-        //must still check ownership even though commt only sent to participants, non participant node could receive due to bug or network retry?
-        //and not every participant has every key, different participants for dif keys
-        if ((owner_node(key) == self_id) || (((owner_node(key)+1) %NUM_NODES) == self_id)){
-            ht_put(local_table, key, txn.writes[key]); //key, val
-            std::cout << "Putting on participant node " << self_id << " for key [" << key << "]\n";                
+        for (int key : txn.locked_keys) {
+            if ((owner_node(key) == self_id) || (((owner_node(key)+1) %NUM_NODES) == self_id)){
+                ht_put(local_table, key, txn.writes[key]); //key, val
+                std::cout << "Putting on participant node " << self_id << " for key [" << key << "]\n";                
+            }
         }
-        // }
     }
-}
 if (!txn.locked_keys.empty()){
-    for (int key : txn.locked_keys) {//trying a separate loop for releasing
+    for (int key : txn.locked_keys) {
         if ((owner_node(key) == self_id) || (((owner_node(key)+1) %NUM_NODES) == self_id)){
             std::cout << "Releasing lock on participant node " << self_id << " for key [" << key << "]\n";
             release_write(key);
         }
-        // }
     }
 }
     {
         lock_guard<mutex> lock(txn_table_mtx);
-        transactions[txn_id].locked_keys.clear(); //unecessary
+        transactions[txn_id].locked_keys.clear(); 
     }
-    
-    // txn.status = TxnStatus::COMMITTED;
-    // transactions.erase(txn_id); //shouldn't need to clear locked_keys bc we erase the entire thing
 }
 
 void handle_abort(int sock, uint64_t txn_id){
@@ -645,64 +540,52 @@ void handle_abort(int sock, uint64_t txn_id){
     cout << "entering handle_abort for node " << self_id << "\n";
     std::vector<int> keys;
     { //scope for the mutex
-    std::lock_guard<std::mutex> lock(txn_table_mtx);
+        std::lock_guard<std::mutex> lock(txn_table_mtx);
 
-    auto it = transactions.find(txn_id);
-    if (it == transactions.end()){
-        std::cout << "[Node " << self_id << "] Abort failed: Unknown Txn " << txn_id << "\n";
-        return;
+        auto it = transactions.find(txn_id);
+        if (it == transactions.end()){
+            std::cout << "[Node " << self_id << "] Abort failed: Unknown Txn " << txn_id << "\n";
+            return;
+        }
+
+        TxnState &txn = it->second;
+
+        if (txn.status == TxnStatus::ABORTED){
+            return; //we already set it
+        }
+        txn.status = TxnStatus::ABORTED;
+        keys = txn.locked_keys;
     }
-
-    TxnState &txn = it->second;
-
-    if (txn.status == TxnStatus::ABORTED){
-        return; //we already set it
-    }
-    txn.status = TxnStatus::ABORTED;
-    keys = txn.locked_keys;
-}
     
     for (int key: keys){
-        //todo: maaaybe also check ownership? unsure. seems if everything works correctly, non-participant nodes will never receive abort or commit msgs for foreign keys
         if ((owner_node(key) == self_id) || (((owner_node(key)+1) %NUM_NODES) == self_id)){
             std::cout << "Aborted so Releasing lock on participant node " << self_id << " for key [" << key << "]\n";
             release_write(key);
         }
         
     }
-    //todo: lock txn? already done above oops
-    // txn.status = TxnStatus::ABORTED; //when should we actually remove it?
-    // transactions.erase(txn_id);
 }
 
 //server-side handling
 void handle_client(int sock)
 {
     std::string line;
-    // if (!recv_line(sock, line)) {
-    //     close(sock);
-    //     return;
-    // }
     while (true){
         if (!recv_line(sock, line)){
             break; //try again
         }
-
-    
 
     if (line == "BARRIER READY\n") {
         if (self_id != 0) { 
             send_line(sock, "ERROR not coordinator\n");
             close(sock);
             return;
-            // break; //closes connection
         }
 
         std::unique_lock<mutex> lock(barrier_mtx);
         barrier_ready++;
         if(barrier_ready == NUM_NODES - 1){
             barrier_cv.notify_all();
-            // barrier_ready = 0; //reset for next barrier
         }
         else{
             barrier_cv.wait(lock, [] {
@@ -713,7 +596,6 @@ void handle_client(int sock)
         send_line(sock, "BARRIER GO\n");
         close(sock);
         return;
-        // break; //close this connection after barrier
     }
 
 
@@ -723,8 +605,6 @@ void handle_client(int sock)
 
         if (owner_node(key) != self_id) {
             send_line(sock, "NULL\n");
-            // close(sock);
-            // return;
             continue;
         }
 
@@ -776,8 +656,6 @@ void handle_client(int sock)
     close(sock);
 }
 
-// int server_fd = -1;
-
 void server_loop()
 {
     int server_fd = start_server(nodes[self_id].port);
@@ -788,17 +666,13 @@ void server_loop()
     std::cout << "[Node " << self_id << "] Server TEST TEST listening on port " << nodes[self_id].port << std::endl;
     std::cout.flush();
 
-    // server_fd = start_server(nodes[self_id].port+1); had this here twice lol so nodes were always taken
-
     while (true) {
-        // std::cout << "[Node" << self_id << "] Entered the while(true) loop in serverloop\n";
         std::cout.flush();
         int client = accept_client(server_fd);
         if (client == -1){
             std::cout << "[Node" << self_id << "] Couldn't accept client\n";
             std::cout.flush();
         }
-        // std::cout << "[Node" << self_id << "] Accepted barrier connection\n";
         std::cout.flush();
         if (client >= 0)
             std::thread(handle_client, client).detach();
@@ -807,5 +681,5 @@ void server_loop()
 
 void dht_printall() {
     std::cout << "[Node " << self_id << "] Local table contents:\n";
-    print_table(local_table);  // ht funct
+    print_table(local_table); 
 }
