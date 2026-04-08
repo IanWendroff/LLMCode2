@@ -26,6 +26,13 @@ MODE="$1"
 SSH_USER="$2"
 BASE_DIR="/home/itw227/CSE376/LLMCode2/src2"
 HOSTS=("128.180.120.65" "128.180.120.66" "128.180.120.77" "128.180.120.68")
+SSH_OPTS=(
+  -o BatchMode=yes
+  -o ConnectTimeout=10
+  -o StrictHostKeyChecking=accept-new
+  -o ServerAliveInterval=5
+  -o ServerAliveCountMax=2
+)
 
 case "$MODE" in
   quick)
@@ -44,10 +51,24 @@ esac
 
 echo "Launching mode=$MODE (threads=$THREADS ops=$OPS)"
 
-for i in 0 1 2 3; do
-  host="${HOSTS[$i]}"
+launch_node() {
+  local i="$1"
+  local host="${HOSTS[$i]}"
   echo "[$host] starting node $i"
-  ssh "${SSH_USER}@${host}" "cd \"$BASE_DIR\" && make >/dev/null && nohup ./my_program $i $THREADS $OPS > node${i}.log 2>&1 & echo started node $i"
+  ssh -n "${SSH_OPTS[@]}" "${SSH_USER}@${host}" \
+    "cd \"$BASE_DIR\" && make >/dev/null && nohup ./my_program $i $THREADS $OPS > node${i}.log 2>&1 < /dev/null &" \
+    && echo "[$host] started node $i" \
+    || echo "[$host] failed to start node $i (check SSH key/auth/path)"
+}
+
+PIDS=()
+for i in 0 1 2 3; do
+  launch_node "$i" &
+  PIDS+=("$!")
+done
+
+for pid in "${PIDS[@]}"; do
+  wait "$pid" || true
 done
 
 echo "All launch commands sent."
