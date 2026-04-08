@@ -47,7 +47,7 @@ echo "Launching mode=$MODE (threads=$THREADS ops=$OPS)"
 for i in 0 1 2 3; do
   host="${HOSTS[$i]}"
   echo "[$host] starting node $i"
-  ssh "${SSH_USER}@${host}" "cd \"$BASE_DIR\" && nohup ./my_program $i $THREADS $OPS > node${i}.log 2>&1 & echo started node $i"
+  ssh "${SSH_USER}@${host}" "cd \"$BASE_DIR\" && make >/dev/null && nohup ./my_program $i $THREADS $OPS > node${i}.log 2>&1 & echo started node $i"
 done
 
 echo "All launch commands sent."
