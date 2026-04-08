@@ -1,0 +1,2119 @@
+[Node 1] Trying to bind server on port 6005
+[Node 1] Server TEST TEST listening on port 6005
+[Node 1] Attempting barrier
+[Node 1] Entering distributed_barrier()
+[Node 1] trying to connect to Node 0
+[Node 1] Passed barrier
+Attempting multiput: 25 val_25, 31 val_31, 
+server is PREPARING and calling handle_prepare with txn 108160763297792
+Acquired lock on participant node 1 for pair [89, val_89]
+Node 1, transaction 108160763297792 has locked keys: 89, 
+Acquired lock on coordinator node 1 for pair [25, val_25]
+Node 1, transaction 108019598688512 has locked keys:, 25
+server is COMMITTING and calling handle_commit with txn 108160763297792
+Putting on participant node 1 for key [89]
+Releasing lock on participant node 1 for key [89]
+server is PREPARING and calling handle_prepare with txn 108160763297793
+Attempting multiput: 87 val_87, 36 val_36, 
+Acquired lock on participant node 1 for pair [17, val_17]
+Node 1, transaction 108160763297793 has locked keys: 17, 
+Acquired lock on participant node 1 for pair [28, val_28]
+Node 1, transaction 108160763297793 has locked keys: 17, 28, 
+Acquired lock on participant node 1 for pair [61, val_61]
+Node 1, transaction 108160763297793 has locked keys: 17, 28, 61, 
+SENDING commit to participant node 0 for txn 108019598688512
+SENDING commit to participant node 2 for txn 108019598688512
+SENDING commit to participant node 3 for txn 108019598688512
+Putting on coordinator node 1 for key [25]
+Releasing lock on coordinator node 1 for key [25]
+Success multiputting 25 val_25, 31 val_31, 
+Attempting multiput: 99 val_99, 36 val_36, 
+server is PREPARING and calling handle_prepare with txn 108160763560705
+Acquired lock on participant node 1 for pair [16, val_16]
+Node 1, transaction 108160763560705 has locked keys: 16, 
+Acquired lock on participant node 1 for pair [25, val_25]
+Node 1, transaction 108160763560705 has locked keys: 16, 25, 
+Acquired lock on participant node 1 for pair [60, val_60]
+Node 1, transaction 108160763560705 has locked keys: 16, 25, 60, 
+server is COMMITTING and calling handle_commit with txn 108160763297793
+Putting on participant node 1 for key [17]
+Putting on participant node 1 for key [28]
+Putting on participant node 1 for key [61]
+Releasing lock on participant node 1 for key [17]
+Releasing lock on participant node 1 for key [28]
+Releasing lock on participant node 1 for key [61]
+Acquired lock on coordinator node 1 for pair [36, val_36]
+Node 1, transaction 108019598754049 has locked keys:, 36
+server is PREPARING and calling handle_prepare with txn 108348654879232
+Acquired lock on participant node 1 for pair [40, val_40]
+Node 1, transaction 108348654879232 has locked keys: 40, 
+server is COMMITTING and calling handle_commit with txn 108160763560705
+Putting on participant node 1 for key [16]
+Putting on participant node 1 for key [25]
+Putting on participant node 1 for key [60]
+Releasing lock on participant node 1 for key [16]
+Releasing lock on participant node 1 for key [25]
+Releasing lock on participant node 1 for key [60]
+server is COMMITTING and calling handle_commit with txn 108348654879232
+Putting on participant node 1 for key [40]
+Releasing lock on participant node 1 for key [40]
+SENDING commit to participant node 0 for txn 108019598754049
+SENDING commit to participant node 3 for txn 108019598754049
+Putting on coordinator node 1 for key [36]
+Releasing lock on coordinator node 1 for key [36]
+Success multiputting 87 val_87, 36 val_36, 
+Attempting multiput: 83 val_83, 10 val_10, 48 val_48, 
+Acquired lock on coordinator node 1 for pair [36, val_36]
+Node 1, transaction 108019598754050 has locked keys:, 36
+server is PREPARING and calling handle_prepare with txn 108160763363331
+Acquired lock on participant node 1 for pair [45, val_45]
+Node 1, transaction 108160763363331 has locked keys: 45, 
+server is PREPARING and calling handle_prepare with txn 108160763363332
+Acquired lock on participant node 1 for pair [29, val_29]
+Node 1, transaction 108160763363332 has locked keys: 29, 
+SENDING commit to participant node 0 for txn 108019598754050
+SENDING commit to participant node 3 for txn 108019598754050
+Putting on coordinator node 1 for key [36]
+Releasing lock on coordinator node 1 for key [36]
+server is PREPARING and calling handle_prepare with txn 108160763626242
+Acquired lock on participant node 1 for pair [61, server is PREPARING and calling handle_prepare with txn val_61]
+108348654944771
+Node Attempting multiput: 175 val_75, 29 val_29, , transaction 
+108160763626242 has locked keys: 61, 
+Acquired lock on participant node 1 for pair [24, val_24]
+Node 1, transaction 108348654944771 has locked keys: 24, 
+server is COMMITTING and calling handle_commit with txn 108160763363332
+Putting on participant node 1 for key [29]
+Releasing lock on participant node 1 for key [29]
+server is COMMITTING and calling handle_commit with txn 108348654944771
+Putting on participant node 1 for key [24]
+Releasing lock on participant node 1 for key [24]
+server is COMMITTING and calling handle_commit with txn 108160763363331
+Putting on participant node 1 for key [45]
+Releasing lock on participant node 1 for key [45]
+Acquired lock on coordinator node 1 for pair [48, val_48]
+Node 1, transaction 108019598819587 has locked keys:, 48
+server is COMMITTING and calling handle_commit with txn 108160763626242
+Putting on participant node 1 for key [61]
+Releasing lock on participant node 1 for key [61]
+server is PREPARING and calling handle_prepare with txn 108160763428870
+Acquired lock on participant node 1 for pair [32, val_32]
+Node 1, transaction 108160763428870 has locked keys: 32, 
+server is PREPARING and calling handle_prepare with txn 108160763626243
+Acquired lock on participant node 1 for pair [24, val_24]
+Node 1, transaction 108160763626243 has locked keys: 24, 
+server is COMMITTING and calling handle_commit with txn 108160763428870
+Putting on participant node 1 for key [32]
+server is PREPARING and calling handle_prepare with txn Releasing lock on participant node 1 for key [32]
+108348655010309
+Acquired lock on participant node 1 for pair [32, val_32]
+Node 1, transaction 108160763626243 has locked keys: 24, 32, 
+Acquired lock on participant node 1 for pair [1, val_1]
+Node 1, transaction 108348655010309 has locked keys: 1, 
+Acquired lock on participant node 1 for pair [25, val_25]
+Node 1, transaction 108348655010309 has locked keys: 1, 25, 
+Acquired lock on participant node 1 for pair [77, val_77]
+Node 1, transaction 108348655010309 has locked keys: 1, 25, 77, 
+Acquired lock on coordinator node 1 for pair [29, val_29]
+Node 1, transaction 108019598819588 has locked keys:, 29
+server is COMMITTING and calling handle_commit with txn 108348655010309
+Putting on participant node 1 for key [1]
+Putting on participant node 1 for key [25]
+Putting on participant node 1 for key [77]
+Releasing lock on participant node 1 for key [1]
+Releasing lock on participant node 1 for key [25]
+Releasing lock on participant node 1 for key [77]
+server is PREPARING and calling handle_prepare with txn 108348655010308
+Acquired lock on participant node 1 for pair [12, val_12]
+Node 1, transaction 108348655010308 has locked keys: 12, 
+server is PREPARING and calling handle_prepare with txn 108160763428871
+Acquired lock on participant node 1 for pair [56, val_56]
+Node 1, transaction 108160763428871 has locked keys: 56, 
+server is COMMITTING and calling handle_commit with txn 108160763626243
+Putting on participant node 1 for key [24]
+Putting on participant node 1 for key [32]
+Releasing lock on participant node 1 for key [24]
+Releasing lock on participant node 1 for key [32]
+server is COMMITTING and calling handle_commit with txn 108160763428871
+Putting on participant node 1 for key [56]
+Releasing lock on participant node 1 for key [56]
+server is COMMITTING and calling handle_commit with txn 108348655010308
+Putting on participant node 1 for key [12]
+Releasing lock on participant node 1 for key [12]
+SENDING commit to participant node 0 for txn 108019598819588
+SENDING commit to participant node 2 for txn 108019598819588
+SENDING commit to participant node 3 for txn 108019598819588
+Putting on coordinator node 1 for key [29]
+Releasing lock on coordinator node 1 for key [29]
+server is PREPARING and calling handle_prepare with txn 108160763428872
+Acquired lock on participant node 1 for pair [5, val_5]
+Node 1, transaction 108160763428872 has locked keys: 5, 
+Acquired lock on participant node 1 for pair [88, val_88]
+Node 1, transaction 108160763428872 has locked keys: 5, 88, 
+server is PREPARING and calling handle_prepare with txn 108160763494409
+Acquired lock on participant node 1 for pair [24, val_24]
+Node 1, transaction 108160763494409 has locked keys: 24, 
+Acquired lock on participant node 1 for pair [32, val_32]
+Node 1, transaction 108160763494409 has locked keys: 24, 32, 
+server is PREPARING and calling handle_prepare with txn 108160763691781
+Acquired lock on participant node 1 for pair [17, val_17]
+Node 1, transaction 108160763691781 has locked keys: 17, 
+server is PREPARING and calling handle_prepare with txn 108348655010311
+Acquired lock on participant node 1 for pair [64, val_64]
+Node 1, transaction 108348655010311 has locked keys: 64, 
+server is COMMITTING and calling handle_commit with txn 108160763494409
+Putting on participant node 1 for key [24]
+Putting on participant node 1 for key [32]
+Releasing lock on participant node 1 for key [24]
+Releasing lock on participant node 1 for key [32]
+server is COMMITTING and calling handle_commit with txn 108160763691781
+Putting on participant node 1 for key [17]
+Releasing lock on participant node 1 for key [17]
+server is COMMITTING and calling handle_commit with txn 108348655010311
+Putting on participant node 1 for key [64]
+Releasing lock on participant node 1 for key [64]
+server is PREPARING and calling handle_prepare with txn 108348655075848
+Acquired lock on participant node 1 for pair [40, val_40]
+Node 1, transaction 108348655075848 has locked keys: 40, 
+server is PREPARING and calling handle_prepare with txn 108348655075849
+Acquired lock on participant node 1 for pair [60, val_60]
+Node 1, transaction 108348655075849 has locked keys: 60, 
+server is PREPARING and calling handle_prepare with txn 108160763494410
+Acquired lock on participant node 1 for pair [0, val_0]
+Node 1, transaction 108160763494410 has locked keys: 0, 
+Acquired lock on participant node 1 for pair [77, val_77]
+Node 1, transaction 108160763494410 has locked keys: 0, 77, 
+server is COMMITTING and calling handle_commit with txn 108348655075849
+Putting on participant node 1 for key [60]
+Releasing lock on participant node 1 for key [60]
+server is COMMITTING and calling handle_commit with txn 108160763494410
+Putting on participant node 1 for key [0]
+Putting on participant node 1 for key [77]
+Releasing lock on participant node 1 for key [0]
+Releasing lock on participant node 1 for key [77]
+server is PREPARING and calling handle_prepare with txn 108160763559947
+Acquired lock on participant node 1 for pair [0, val_0]
+Node 1, transaction 108160763559947 has locked keys: 0, 
+server is COMMITTING and calling handle_commit with txn 108160763559947
+Putting on participant node 1 for key [0]
+Releasing lock on participant node 1 for key [0]
+server is PREPARING and calling handle_prepare with txn 108160763757319
+server is PREPARING and calling handle_prepare with txn 108160763625484
+Acquired lock on participant node 1 for pair [0, val_0]
+Node 1, transaction 108160763625484 has locked keys: 0, 
+server is PREPARING and calling handle_prepare with txn 108348655206923
+Acquired lock on participant node 1 for pair [32, val_32]
+Node 1, transaction 108348655206923 has locked keys: 32, 
+Acquired lock on participant node 1 for pair [72, val_72]
+Node 1, transaction 108348655206923 has locked keys: 32, 72, 
+server is COMMITTING and calling handle_commit with txn 108160763625484
+Putting on participant node 1 for key [0]
+Releasing lock on participant node 1 for key [0]
+server is COMMITTING and calling handle_commit with txn 108348655206923
+Putting on participant node 1 for key [32]
+Putting on participant node 1 for key [72]
+Releasing lock on participant node 1 for key [32]
+Releasing lock on participant node 1 for key [72]
+SENDING abort to participant node 0 for txn 108019598819587
+SENDING abort to participant node 2 for txn 108019598819587
+SENDING abort to participant node 3 for txn 108019598819587
+NOT putting on coordinator node 1 for key [48], just releasing lock
+Acquired lock on participant node 1 for pair [48, val_48]
+Node 1, transaction 108348655075848 has locked keys: 40, 48, 
+server is COMMITTING and calling handle_commit with txn 108348655075848
+Putting on participant node 1 for key [40]
+Putting on participant node 1 for key [48]
+Releasing lock on participant node 1 for key [40]
+Releasing lock on participant node 1 for key [48]
+server is ABORTING and calling handle_abort with txn 108160763428872
+entering handle_abort for node 1
+Aborted so Releasing lock on participant node 1 for key [5]
+Aborted so Releasing lock on participant node 1 for key [88]
+Abort for txn 108160763428872 complete
+Acquired lock on participant node 1 for pair [5, val_5]
+Node 1, transaction 108160763757319 has locked keys: 5, 
+Acquired lock on participant node 1 for pair [92, val_92]
+Node 1, transaction 108160763757319 has locked keys: 5, 92, 
+Acquired lock on coordinator node 1 for pair [69, val_69]
+Node 1, transaction 108019664486662 has locked keys:, 69
+SENDING commit to participant node 2 for txn 108019664421125
+SENDING commit to participant node 3 for txn 108019664421125
+server is PREPARING and calling handle_prepare with txn 108348720611853
+Success putting 38
+Attempting multiput: 38 val_38, 55 val_55, 
+Acquired lock on participant node 1 for pair [17, val_17]
+Node 1, transaction 108348720611853 has locked keys: 17, 
+SENDING commit to participant node 2 for txn 108019664486662
+Putting on coordinator node 1 for key [69]
+Releasing lock on coordinator node 1 for key [69]
+Success putting 69
+SENDING commit to participant node 0 for txn 108019664486663
+SENDING commit to participant node 2 for txn 108019664486663
+SENDING commit to participant node 3 for txn 108019664486663
+Success multiputting 38 val_38, 55 val_55, 
+Attempting multiput: 95 val_95, 71 val_71, 
+server is ABORTING and calling handle_abort with txn 108160763757319
+entering handle_abort for node 1
+Aborted so Releasing lock on participant node 1 for key [5]
+Aborted so Releasing lock on participant node 1 for key [92]
+Abort for txn 108160763757319 complete
+server is COMMITTING and calling handle_commit with txn 108348720611853
+Putting on participant node 1 for key [17]
+Releasing lock on participant node 1 for key [17]
+server is PREPARING and calling handle_prepare with txn 108160763691021
+Acquired lock on participant node 1 for pair [53, val_53]
+Node 1, transaction 108160763691021 has locked keys: 53, 
+Acquired lock on participant node 1 for pair [92, val_92]
+Node 1, transaction 108160763691021 has locked keys: 53, 92, 
+server is PREPARING and calling handle_prepare with txn 108160829095950
+Acquired lock on participant node 1 for pair [73, val_73]
+Node 1, transaction 108160829095950 has locked keys: 73, 
+server is COMMITTING and calling handle_commit with txn 108160763691021
+Putting on participant node 1 for key [53]
+Putting on participant node 1 for key [92]
+Releasing lock on participant node 1 for key [53]
+Releasing lock on participant node 1 for key [92]
+Attempting multiput: 13 val_13, 23 val_23, 35 val_35, 
+server is PREPARING and calling handle_prepare with txn 108160829358858
+Acquired lock on participant node 1 for pair [37, val_37]
+Node 1, transaction 108160829358858 has locked keys: 37, 
+server is COMMITTING and calling handle_commit with txn 108160829095950
+Putting on participant node 1 for key [73]
+Releasing lock on participant node 1 for key [73]
+SENDING commit to participant node 0 for txn 108019664552200
+server is COMMITTING and calling handle_commit with txn 108160829358858
+SENDING commit to participant node 3 for txn 108019664552200
+Putting on participant node 1 for key [37]
+Releasing lock on participant node 1 for key [37]
+Success multiputting 95 val_95, 71 val_71, 
+server is PREPARING and calling handle_prepare with txn 108160829161487
+Acquired lock on coordinator node 1 for pair [13, val_13]
+Node 1, transaction 108019664552201 has locked keys:, 13
+Acquired lock on participant node 1 for pair [32, val_32]
+Node 1, transaction 108160829161487 has locked keys: 32, 
+server is PREPARING and calling handle_prepare with txn 108160829161488
+Acquired lock on participant node 1 for pair [29, val_29]
+Node 1, transaction 108160829161488 has locked keys: 29, 
+Acquired lock on participant node 1 for pair [93, val_93]
+Node 1, transaction 108160829161488 has locked keys: 29, 93, 
+server is COMMITTING and calling handle_commit with txn 108160829161487
+Putting on participant node 1 for key [32]
+Releasing lock on participant node 1 for key [32]
+SENDING commit to participant node 0 for txn 108019664552201
+SENDING commit to participant node 2 for txn 108019664552201
+SENDING commit to participant node 3 for txn 108019664552201
+Putting on coordinator node 1 for key [13]
+Releasing lock on coordinator node 1 for key [13]
+Success multiputting 13 val_13, 23 val_23, 35 val_35, 
+Attempting multiput: 2 val_2, 56 val_56, 
+SENDING commit to participant node server is COMMITTING and calling handle_commit with txn 0108160829161488
+ for txn 108019664617738
+Putting on participant node 1 for key [29]
+Putting on participant node 1 for key [93]
+SENDING commit to participant node Releasing lock on participant node 31 for txn  for key [29]
+108019664617738
+Releasing lock on participant node 1 for key [93]
+Success putting 95
+server is PREPARING and calling handle_prepare with txn 108348720808464
+Acquired lock on participant node 1 for pair [4, val_4]
+Node 1, transaction 108348720808464 has locked keys: 4, 
+Acquired lock on participant node 1 for pair [52, val_52]
+Node 1, transaction 108348720808464 has locked keys: 4, 52, 
+Acquired lock on coordinator node 1 for pair [56, val_56]
+Node 1, transaction 108019664617739 has locked keys:, 56
+server is PREPARING and calling handle_prepare with txn 108160829424397
+server is PREPARING and calling handle_prepare with txn 108348720808463
+Acquired lock on participant node 1 for pair [8, val_8]
+Node 1, transaction 108160829424397 has locked keys: Acquired lock on participant node 81 for pair [, 40
+, val_40Acquired lock on participant node ]
+1 for pair [12, val_12]
+Node 1, transaction Node 1083487208084631, transaction 108160829424397 has locked keys:  has locked keys: 8, 4012, 
+, 
+server is PREPARING and calling handle_prepare with txn 108160829227026
+server is COMMITTING and calling handle_commit with txn 108348720808464
+SENDING commit to participant node 0 for txn 108019664617739
+Putting on participant node 1 for key [4]
+Putting on participant node 1 for key [52]
+Releasing lock on participant node 1 for key [4]
+Acquired lock on participant node SENDING commit to participant node Releasing lock on participant node 1 for key [12 for txn 108019664617739
+ for pair [6852, ]
+val_68]
+Node 1, transaction 108160829227026 has locked keys: SENDING commit to participant node 683 for txn , 108019664617739
+
+Putting on coordinator node 1 for key [56]
+Releasing lock on coordinator node 1 for key [56]
+server is COMMITTING and calling handle_commit with txn 108348720808463
+Putting on participant node 1 for key [40]
+Releasing lock on participant node 1 for key [40]
+server is COMMITTING and calling handle_commit with txn 108160829424397
+Putting on participant node 1 for key [8]
+Putting on participant node 1 for key [12]
+Releasing lock on participant node 1 for key [8]
+Releasing lock on participant node 1 for key [12]
+server is COMMITTING and calling handle_commit with txn 108160829227026
+Putting on participant node 1 for key [68]
+Releasing lock on participant node 1 for key [68]
+server is PREPARING and calling handle_prepare with txn 108160829227025
+Acquired lock on participant node 1 for pair [12, val_12]
+Node 1, transaction 108160829227025 has locked keys: 12, 
+SENDING commit to participant node 2 for txn 108019664683276
+SENDING commit to participant node 3 for txn 108019664683276
+Success putting 74
+server is PREPARING and calling handle_prepare with txn 108160829292563
+Acquired lock on participant node 1 for pair [5, val_5]
+Node 1, transaction 108160829292563 has locked keys: 5, 
+server is PREPARING and calling handle_prepare with txn 108348720808466
+Acquired lock on participant node 1 for pair [8, val_8]
+Node 1, transaction 108348720808466 has locked keys: 8, 
+Acquired lock on coordinator node 1 for pair [92, val_92]
+Node 1, transaction 108019664683277 has locked keys:, 92
+server is COMMITTING and calling handle_commit with txn 108348720808466
+Putting on participant node 1 for key [8]
+Releasing lock on participant node 1 for key [8]
+SENDING commit to participant node 0 for txn 108019664683277
+Putting on coordinator node 1 for key [92]
+Releasing lock on coordinator node 1 for key [92]
+server is PREPARING and calling handle_prepare with txn 108160829489934
+Acquired lock on participant node 1 for pair [40, val_40]
+Node 1, transaction 108160829489934 has locked keys: 40, 
+server is PREPARING and calling handle_prepare with txn 108160829489935
+Acquired lock on participant node 1 for pair [41, val_41]
+Node 1, transaction 108160829489935 has locked keys: 41, 
+server is COMMITTING and calling handle_commit with txn 108160829489935
+Putting on participant node 1 for key [41]
+Releasing lock on participant node 1 for key [41]
+server is PREPARING and calling handle_prepare with txn 108348720874003
+Acquired lock on participant node 1 for pair [68, val_68]
+Node 1, transaction 108348720874003 has locked keys: 68, 
+server is COMMITTING and calling handle_commit with txn 108160829489934
+Putting on participant node 1 for key [40]
+Releasing lock on participant node 1 for key [40]
+server is COMMITTING and calling handle_commit with txn 108348720874003
+Putting on participant node 1 for key [68]
+Releasing lock on participant node 1 for key [68]
+Attempting multiput: 24 val_24, 37 val_37, 
+server is PREPARING and calling handle_prepare with txn 108348720874005
+Acquired lock on participant node 1 for pair [24, val_24]
+Node 1, transaction 108348720874005 has locked keys: 24, 
+server is PREPARING and calling handle_prepare with txn 108160829555472
+Acquired lock on participant node 1 for pair [93, val_93]
+Node 1, transaction 108160829555472 has locked keys: 93, 
+server is PREPARING and calling handle_prepare with txn 108348720874004
+Acquired lock on participant node 1 for pair [0, val_0]
+Node 1, transaction 108348720874004 has locked keys: 0, 
+server is COMMITTING and calling handle_commit with txn 108160829555472
+Putting on participant node 1 for key [93]
+Releasing lock on participant node 1 for key [93]
+server is PREPARING and calling handle_prepare with txn 108160829555473
+Acquired lock on participant node 1 for pair [33, val_33]
+Node 1, transaction 108160829555473 has locked keys: 33, 
+Acquired lock on participant node 1 for pair [60, val_60]
+Node 1, transaction 108160829555473 has locked keys: 33, 60, 
+server is COMMITTING and calling handle_commit with txn 108348720874005
+Putting on participant node 1 for key [24]
+Releasing lock on participant node 1 for key [24]
+server is COMMITTING and calling handle_commit with txn 108348720874004
+Putting on participant node 1Acquired lock on coordinator node 1 for pair [24,  for key [0]
+val_24Releasing lock on participant node ]
+1 for key [0]
+Acquired lock on coordinator node 1 for pair [37, val_37]
+Node 1, transaction 108019664748814 has locked keys:, 24, 37
+Attempting multiput: 46 val_46, 10 val_10, 14 val_14, 
+SENDING commit to participant node 0 for txn 108019664748814
+SENDING commit to participant node server is COMMITTING and calling handle_commit with txn 2 for txn 108160829555473108019664748814
+
+Putting on participant node 1 for key [33]
+Putting on participant node 1 for key [60]
+Releasing lock on participant node 1 for key [33]
+Putting on coordinator node 1 for key [24]
+Releasing lock on participant node Putting on coordinator node 1 for key [160]
+ for key [37]
+Releasing lock on coordinator node 1 for key [24]
+Releasing lock on coordinator node 1 for key [37]
+Attempting multiput: 90 val_90, 70 val_70, 
+server is PREPARING and calling handle_prepare with txn 108160829621010
+Acquired lock on participant node 1 for pair [1, val_1]
+Node 1, transaction 108160829621010 has locked keys: 1, 
+Acquired lock on participant node 1 for pair [25, val_25]
+Node 1, transaction 108160829621010 has locked keys: 1, 25, 
+Acquired lock on participant node 1 for pair [45, val_45]
+Node 1, transaction 108160829621010 has locked keys: 1, 25, 45, 
+server is COMMITTING and calling handle_commit with txn 108160829621010
+Putting on participant node 1 for key [1]
+Putting on participant node 1 for key [25]
+Putting on participant node 1 for key [45]
+Releasing lock on participant node 1 for key [1]
+Releasing lock on participant node 1 for key [25]
+Releasing lock on participant node 1 for key [45]
+server is PREPARING and calling handle_prepare with txn 108160829621011
+Acquired lock on participant node 1 for pair [57, val_57]
+Node 1, transaction 108160829621011 has locked keys: 57, 
+server is PREPARING and calling handle_prepare with txn 108348720939542
+Acquired lock on participant node 1 for pair [37, val_37]
+Node 1, transaction 108348720939542 has locked keys: 37, 
+SENDING commit to participant node 2 for txn 108019664814352
+SENDING commit to participant node 3 for txn 108019664814352
+Success multiputting 90 val_90, 70 val_70, 
+Attempting multiput: 90 val_90, 48 val_48, 18 val_18, 
+server is COMMITTING and calling handle_commit with txn 108160829621011
+Putting on participant node 1 for key [57]
+Releasing lock on participant node 1 for key [57]
+server is COMMITTING and calling handle_commit with txn 108348720939542
+Putting on participant node 1 for key [37]
+Releasing lock on participant node 1 for key [37]
+server is PREPARING and calling handle_prepare with txn 108160829621012
+Acquired lock on participant node 1 for pair [41, val_41]
+Node 1, transaction 108160829621012 has locked keys: 41, 
+Acquired lock on coordinator node 1 for pair [48, val_48]
+Node 1, transaction 108019664879889 has locked keys:, 48
+server is COMMITTING and calling handle_commit with txn 108160829621012
+Putting on participant node 1 for key [41]
+Releasing lock on participant node 1 for key [41]
+server is PREPARING and calling handle_prepare with txn 108160829621013
+Acquired lock on participant node 1 for pair [64, val_64]
+Node 1, transaction 108160829621013 has locked keys: 64, 
+Acquired lock on participant node 1 for pair [65, val_65]
+Node 1, transaction 108160829621013 has locked keys: 64, 65, 
+SENDING commit to participant node 0 for txn 108019664879889
+SENDING commit to participant node 2 for txn 108019664879889
+SENDING commit to participant node 3 for txn 108019664879889
+server is COMMITTING and calling handle_commit with txn 108160829621013
+Putting on participant node 1 for key [64]
+Putting on participant node 1 for key [65]
+Releasing lock on participant node 1 for key [64]
+Putting on coordinator node 1 for key [Releasing lock on participant node 481 for key [65]
+]
+Releasing lock on coordinator node 1 for key [48]
+server is PREPARING and calling handle_prepare with txn 108348721005079
+Acquired lock on participant node 1 for pair [4, val_4]
+Node 1, transaction 108348721005079 has locked keys: 4, 
+Acquired lock on participant node 1 for pair [68, val_68]
+Node 1, transaction 108348721005079 has locked keys: 4, 68, 
+Acquired lock on participant node 1 for pair [73, val_73]
+Node 1, transaction 108348721005079 has locked keys: 4, 68, 73, 
+Acquired lock on coordinator node 1 for pair [76, val_76]
+Node 1, transaction 108019664879890 has locked keys:, 76
+server is COMMITTING and calling handle_commit with txn 108348721005079
+Putting on participant node 1 for key [4]
+Putting on participant node 1 for key [68]
+Putting on participant node 1 for key [73]
+Releasing lock on participant node 1 for key [4]
+Releasing lock on participant node 1 for key [68]
+Releasing lock on participant node 1 for key [73]
+SENDING commit to participant node 0 for txn 108019664879890
+Putting on coordinator node 1 for key [76]
+Releasing lock on coordinator node 1 for key [76]
+Success putting 76
+server is PREPARING and calling handle_prepare with txn 108160829686551
+Acquired lock on participant node 1 for pair [52, val_52]
+Node 1, transaction 108160829686551 has locked keys: 52, 
+server is PREPARING and calling handle_prepare with txn 108348721070616
+Acquired lock on participant node 1 for pair [57, val_57]
+Node 1, transaction 108348721070616 has locked keys: 57, 
+server is COMMITTING and calling handle_commit with txn 108160829686551
+Putting on participant node 1 for key [52]
+Releasing lock on participant node 1 for key [52]
+server is COMMITTING and calling handle_commit with txn 108348721070616
+Putting on participant node 1 for key [57]
+Releasing lock on participant node 1 for key [57]
+server is PREPARING and calling handle_prepare with txn 108160829686552
+Acquired lock on participant node 1 for pair [1, val_1]
+Node 1, transaction 108160829686552 has locked keys: 1, 
+Attempting multiput: 22 val_22, 33 val_33, 24 val_24, 
+server is COMMITTING and calling handle_commit with txn 108160829686552
+Putting on participant node 1 for key [1]
+Releasing lock on participant node 1 for key [1]
+Acquired lock on coordinator node 1 for pair [24, val_24]
+Acquired lock on coordinator node 1 for pair [33, val_33]
+Node 1, transaction 108019664945427 has locked keys:, 24, 33
+server is PREPARING and calling handle_prepare with txn 108160829752089
+Acquired lock on participant node 1 for pair [41, val_41]
+Node 1, transaction 108160829752089 has locked keys: 41, 
+server is COMMITTING and calling handle_commit with txn 108160829752089
+Putting on participant node 1 for key [41]
+Releasing lock on participant node 1 for key [41]
+SENDING commit to participant node 0 for txn 108019664945427
+SENDING commit to participant node 2 for txn 108019664945427
+SENDING commit to participant node 3 for txn 108019664945427
+Putting on coordinator node 1 for key [24]
+Putting on coordinator node 1 for key [33]
+Releasing lock on coordinator node 1 for key [24]
+Releasing lock on coordinator node 1 for key [33]
+Attempting multiput: 58 val_58, 50 val_50, 62 val_62, 
+server is PREPARING and calling handle_prepare with txn 108160829817627
+Acquired lock on participant node 1 for pair [76, val_76]
+Node 1, transaction 108160829817627 has locked keys: 76, 
+server is COMMITTING and calling handle_commit with txn 108160829817627
+Putting on participant node 1 for key [76]
+Releasing lock on participant node 1 for key [76]
+server is PREPARING and calling handle_prepare with txn 108160829883164
+Acquired lock on participant node 1 for pair [25, val_25]
+Node 1, transaction 108160829883164 has locked keys: 25, 
+Acquired lock on participant node 1 for pair [52, val_52]
+Node 1, transaction 108160829883164 has locked keys: 25, 52, 
+server is COMMITTING and calling handle_commit with txn 108160829883164
+Putting on participant node 1 for key [25]
+Putting on participant node 1 for key [52]
+Releasing lock on participant node 1 for key [25]
+Releasing lock on participant node 1 for key [52]
+server is PREPARING and calling handle_prepare with txn 108160829883165
+Acquired lock on participant node 1 for pair [48, val_48]
+Node 1, transaction 108160829883165 has locked keys: 48, 
+Acquired lock on participant node 1 for pair [81, val_81]
+Node 1, transaction 108160829883165 has locked keys: 48, 81, 
+server is COMMITTING and calling handle_commit with txn 108160829883165
+Putting on participant node 1 for key [48]
+Putting on participant node 1 for key [81]
+Releasing lock on participant node 1 for key [48]
+Releasing lock on participant node 1 for key [81]
+server is PREPARING and calling handle_prepare with txn 108160830014242
+Acquired lock on participant node 1 for pair [21, val_21]
+Node 1, transaction 108160830014242 has locked keys: 21, 
+Acquired lock on participant node 1 for pair [89, val_89]
+Node 1, transaction 108160830014242 has locked keys: 21, 89, 
+server is COMMITTING and calling handle_commit with txn 108160830014242
+Putting on participant node 1 for key [21]
+Putting on participant node 1 for key [89]
+Releasing lock on participant node 1 for key [21]
+Releasing lock on participant node 1 for key [89]
+server is PREPARING and calling handle_prepare with txn 108160830079780
+Acquired lock on participant node 1 for pair [89, val_89]
+Node 1, transaction 108160830079780 has locked keys: 89, 
+server is COMMITTING and calling handle_commit with txn 108160830079780
+Putting on participant node 1 for key [89]
+Releasing lock on participant node 1 for key [89]
+server is PREPARING and calling handle_prepare with txn 108160830145317
+Acquired lock on participant node 1 for pair [29, val_29]
+Node 1, transaction 108160830145317 has locked keys: 29, 
+server is COMMITTING and calling handle_commit with txn 108160830145317
+Putting on participant node 1 for key [29]
+Releasing lock on participant node 1 for key [29]
+server is ABORTING and calling handle_abort with txn 108160829292563
+entering handle_abort for node 1
+Aborted so Releasing lock on participant node 1 for key [5]
+Abort for txn 108160829292563 complete
+server is ABORTING and calling handle_abort with txn 108160829227025
+entering handle_abort for node 1
+Aborted so Releasing lock on participant node 1 for key [12]
+Abort for txn 108160829227025 complete
+server is PREPARING and calling handle_prepare with txn 108348721201689
+SENDING commit to participant node 2 for txn 108019665010964
+Acquired lock on participant node 1 for pair [32, val_32]
+Node 1, transaction 108348721201689 has locked keys: 32, 
+SENDING commit to participant node 3 for txn 108019665010964
+Success multiputting 58 val_58, 50 val_50, 62 val_62, 
+server is PREPARING and calling handle_prepare with txn 108160894828564
+server is PREPARING and calling handle_prepare with txn 108160830276390
+Acquired lock on participant node 1 for pair [36, val_36]
+Node 1, transaction 108160894828564 has locked keys: 36, 
+Acquired lock on participant node 1 for pair [45, val_45]
+Node 1, transaction 108160894828564 has locked keys: 36, 45, 
+Acquired lock on participant node 1 for pair [44, val_44]
+Node 1, transaction 108160830276390 has locked keys: 44, 
+Acquired lock on coordinator node 1 for pair [76, val_76]
+Node 1, transaction 108019730350357 has locked keys:, 76
+server is COMMITTING and calling handle_commit with txn 108160894828564
+Putting on participant node 1 for key [36]
+Putting on participant node 1 for key [45]
+Releasing lock on participant node 1 for key [36]
+Releasing lock on participant node 1 for key [45]
+server is COMMITTING and calling handle_commit with txn 108160830276390
+Putting on participant node 1 for key [44]
+Releasing lock on participant node 1 for key [44]
+SENDING commit to participant node 0 for txn 108019730350357
+Putting on coordinator node 1 for key [76]
+Releasing lock on coordinator node 1 for key [76]
+SENDING abort to participant node 2 for txn 108019664814351
+SENDING abort to participant node 3 for txn 108019664814351
+server is PREPARING and calling handle_prepare with txn 108160895157031
+Acquired lock on participant node 1 for pair [56, val_56]
+Node 1, transaction 108160895157031 has locked keys: 56, 
+server is PREPARING and calling handle_prepare with txn 108348786475546
+Acquired lock on participant node 1 for pair [68, val_68]
+Node 1, transaction 108348786475546 has locked keys: 68, 
+server is PREPARING and calling handle_prepare with txn 108160895157032
+Acquired lock on participant node 1 for pair [81, val_81]
+Node 1, transaction 108160895157032 has locked keys: 81, 
+server is COMMITTING and calling handle_commit with txn 108160895157032
+Putting on participant node 1 for key [81]
+Releasing lock on participant node 1 for key [81]
+server is COMMITTING and calling handle_commit with txn 108160895157031
+Putting on participant node 1 for key [56]
+Releasing lock on participant node 1 for key [56]
+server is COMMITTING and calling handle_commit with txn 108348786475546
+Putting on participant node 1 for key [68]
+Releasing lock on participant node 1 for key [68]
+server is PREPARING and calling handle_prepare with txn 108160895222569
+Acquired lock on participant node 1 for pair [89, val_89]
+Node 1, transaction 108160895222569 has locked keys: 89, 
+server is COMMITTING and calling handle_commit with txn 108160895222569
+Putting on participant node 1 for key [89]
+Releasing lock on participant node 1 for key [89]
+server is PREPARING and calling handle_prepare with txn 108160895288106
+Acquired lock on participant node 1 for pair [16, val_16]
+Node 1, transaction 108160895288106 has locked keys: 16, 
+server is COMMITTING and calling handle_commit with txn 108160895288106
+Putting on participant node 1 for key [16]
+Releasing lock on participant node 1 for key [16]
+server is PREPARING and calling handle_prepare with txn 108160895288108
+Acquired lock on participant node 1 for pair [16, val_16]
+Node 1, transaction 108160895288108 has locked keys: 16, 
+Acquired lock on participant node 1 for pair [48, val_48]
+Node 1, transaction 108160895288108 has locked keys: 16, 48, 
+server is PREPARING and calling handle_prepare with txn 108160895288109
+Acquired lock on participant node 1 for pair [40, val_40]
+Node 1, transaction 108160895288109 has locked keys: 40, 
+server is PREPARING and calling handle_prepare with txn 108160895090711
+Acquired lock on participant node 1 for pair [28, val_28]
+Node 1, transaction 108160895090711 has locked keys: 28, 
+server is COMMITTING and calling handle_commit with txn 108160895288109
+Putting on participant node 1 for key [40]
+Releasing lock on participant node 1 for key [40]
+server is COMMITTING and calling handle_commit with txn 108160895288108
+Putting on participant node 1 for key [16]
+Putting on participant node 1 for key [48]
+Releasing lock on participant node 1 for key [16]
+Releasing lock on participant node 1 for key [48]
+server is COMMITTING and calling handle_commit with txn 108160895090711
+Putting on participant node 1 for key [28]
+Releasing lock on participant node 1 for key [28]
+server is PREPARING and calling handle_prepare with txn 108160895156248
+Acquired lock on participant node 1 for pair [4, val_4]
+Node 1, transaction 108160895156248 has locked keys: 4, 
+Acquired lock on participant node 1 for pair [16, val_16]
+Node 1, transaction 108160895156248 has locked keys: 4, 16, 
+server is COMMITTING and calling handle_commit with txn 108160895156248
+Putting on participant node 1 for key [4]
+Putting on participant node 1 for key [16]
+Releasing lock on participant node 1 for key [4]
+Releasing lock on participant node 1 for key [16]
+server is PREPARING and calling handle_prepare with txn 108160895419182
+Acquired lock on participant node 1 for pair [36, val_36]
+Node 1, transaction 108160895419182 has locked keys: 36, 
+server is PREPARING and calling handle_prepare with txn 108160895419183
+Acquired lock on participant node 1 for pair [0, val_0]
+Node 1, transaction 108160895419183 has locked keys: 0, 
+Acquired lock on participant node 1 for pair [48, val_48]
+Node 1, transaction 108160895419183 has locked keys: 0, 48, 
+server is COMMITTING and calling handle_commit with txn 108160895419182
+Putting on participant node 1 for key [36]
+Releasing lock on participant node 1 for key [36]
+server is COMMITTING and calling handle_commit with txn 108160895419183
+Putting on participant node 1 for key [0]
+Putting on participant node 1 for key [48]
+Releasing lock on participant node 1 for key [0]
+Releasing lock on participant node 1 for key [48]
+server is PREPARING and calling handle_prepare with txn 108160895287321
+Acquired lock on participant node 1 for pair [40, val_40]
+Node 1, transaction 108160895287321 has locked keys: 40, 
+server is PREPARING and calling handle_prepare with txn 108160895484721
+Acquired lock on participant node 1 for pair [8, val_8]
+Node 1, transaction 108160895484721 has locked keys: 8, 
+server is PREPARING and calling handle_prepare with txn 108160895484722
+Acquired lock on participant node 1 for pair [49, val_49]
+Node 1, transaction 108160895484722 has locked keys: 49, 
+server is COMMITTING and calling handle_commit with txn 108160895287321
+Putting on participant node 1 for key [40]
+Releasing lock on participant node 1 for key [40]
+server is COMMITTING and calling handle_commit with txn 108160895484721
+Putting on participant node 1 for key [8]
+Releasing lock on participant node 1 for key [8]
+server is COMMITTING and calling handle_commit with txn 108160895484722
+Putting on participant node 1 for key [49]
+Releasing lock on participant node 1 for key [49]
+server is PREPARING and calling handle_prepare with txn 108160895352858
+Acquired lock on participant node 1 for pair [73, val_73]
+Node 1, transaction 108160895352858 has locked keys: 73, 
+server is COMMITTING and calling handle_commit with txn 108160895352858
+Putting on participant node 1 for key [73]
+Releasing lock on participant node 1 for key [73]
+server is PREPARING and calling handle_prepare with txn 108160895615798
+Acquired lock on participant node 1 for pair [12, val_12]
+Node 1, transaction 108160895615798 has locked keys: 12, 
+server is COMMITTING and calling handle_commit with txn 108160895615798
+Putting on participant node 1 for key [12]
+Releasing lock on participant node 1 for key [12]
+server is PREPARING and calling handle_prepare with txn 108160895483932
+Acquired lock on participant node 1 for pair [33, val_33]
+server is PREPARING and calling handle_prepare with txn Node 1, transaction 108160895681336108160895483932
+ has locked keys: 33, 
+Acquired lock on participant node 1 for pair [1, val_1]
+Node 1, transaction 108160895681336 has locked keys: 1, 
+Acquired lock on participant node 1 for pair [9, val_9]
+Node 1, transaction 108160895681336 has locked keys: 1, 9, 
+server is PREPARING and calling handle_prepare with txn 108160895681337
+Acquired lock on participant node 1 for pair [25, val_25]
+Node 1, transaction 108160895681337 has locked keys: 25, 
+Acquired lock on participant node 1 for pair [28, val_28]
+Node 1, transaction 108160895681337 has locked keys: 25, 28, 
+server is COMMITTING and calling handle_commit with txn 108160895681336
+Putting on participant node 1 for key [1]
+Putting on participant node 1 for key [9]
+Releasing lock on participant node 1 for key [1]
+Releasing lock on participant node 1 for key [9]
+server is COMMITTING and calling handle_commit with txn 108160895483932
+Putting on participant node 1 for key [33]
+Releasing lock on participant node 1 for key [33]
+server is COMMITTING and calling handle_commit with txn 108160895681337
+Putting on participant node 1 for key [25]
+Putting on participant node 1 for key [28]
+Releasing lock on participant node 1 for key [25]
+Releasing lock on participant node 1 for key [28]
+server is PREPARING and calling handle_prepare with txn 108160895746876
+Acquired lock on participant node 1 for pair [44, val_44]
+Node 1, transaction 108160895746876 has locked keys: 44, 
+server is COMMITTING and calling handle_commit with txn 108160895746876
+Putting on participant node 1 for key [44]
+Releasing lock on participant node 1 for key [44]
+server is PREPARING and calling handle_prepare with txn 108160895615006
+Acquired lock on participant node 1 for pair [97, val_97]
+Node 1, transaction 108160895615006 has locked keys: 97, 
+server is COMMITTING and calling handle_commit with txn 108160895615006
+Putting on participant node 1 for key [97]
+Releasing lock on participant node 1 for key [97]
+server is PREPARING and calling handle_prepare with txn 108160895680543
+Acquired lock on participant node 1 for pair [84, val_84]
+Node 1, transaction 108160895680543 has locked keys: 84, 
+Acquired lock on participant node 1 for pair [92, val_92]
+Node 1, transaction 108160895680543 has locked keys: 84, 92, 
+server is COMMITTING and calling handle_commit with txn 108160895680543
+Putting on participant node 1 for key [84]
+Putting on participant node 1 for key [92]
+Releasing lock on participant node 1 for key [84]
+Releasing lock on participant node 1 for key [92]
+server is PREPARING and calling handle_prepare with txn 108160895877951
+Acquired lock on participant node 1 for pair [16, val_16]
+Node 1, transaction 108160895877951 has locked keys: 16, 
+server is COMMITTING and calling handle_commit with txn 108160895877951
+Putting on participant node 1 for key [16]
+Releasing lock on participant node 1 for key [16]
+server is PREPARING and calling handle_prepare with txn 108160895943488
+Acquired lock on participant node 1 for pair [81, val_81]
+Node 1, transaction 108160895943488 has locked keys: 81, 
+server is PREPARING and calling handle_prepare with txn 108160895746081
+Acquired lock on participant node 1 for pair [56, val_56]
+Node 1, transaction 108160895746081 has locked keys: 56, 
+Acquired lock on participant node 1 for pair [80, val_80]
+Node 1, transaction 108160895746081 has locked keys: 56, 80, 
+server is COMMITTING and calling handle_commit with txn 108160895943488
+Putting on participant node 1 for key [81]
+Releasing lock on participant node 1server is COMMITTING and calling handle_commit with txn 108160895746081
+ for key [81]
+Putting on participant node 1 for key [56]
+Putting on participant node 1 for key [80]
+Releasing lock on participant node 1 for key [56]
+Releasing lock on participant node 1 for key [80]
+server is PREPARING and calling handle_prepare with txn 108160896009026
+Acquired lock on participant node 1 for pair [9, val_9]
+Node 1, transaction 108160896009026 has locked keys: 9, 
+Acquired lock on participant node 1 for pair [61, val_61]
+Node 1, transaction 108160896009026 has locked keys: 9, 61, 
+server is PREPARING and calling handle_prepare with txn 108160895811619
+Acquired lock on participant node 1 for pair [29, val_29]
+Node 1, transaction 108160895811619 has locked keys: 29, 
+Acquired lock on participant node 1 for pair [89, val_89]
+Node 1, transaction 108160895811619 has locked keys: 29, 89, 
+server is COMMITTING and calling handle_commit with txn 108160896009026
+Putting on participant node 1 for key [9]
+Putting on participant node 1 for key [61]
+Releasing lock on participant node 1 for key [9]
+Releasing lock on participant node 1 for key [61]
+server is COMMITTING and calling handle_commit with txn 108160895811619
+Putting on participant node 1 for key [29]
+Putting on participant node 1 for key [89]
+Releasing lock on participant node 1 for key [29]
+Releasing lock on participant node 1 for key [89]
+server is PREPARING and calling handle_prepare with txn 108160896074563
+Acquired lock on participant node 1 for pair [20, val_20]
+Node 1, transaction 108160896074563 has locked keys: 20, 
+server is COMMITTING and calling handle_commit with txn 108160896074563
+Putting on participant node 1 for key [20]
+Releasing lock on participant node 1 for key [20]
+server is PREPARING and calling handle_prepare with txn 108160895877156
+Acquired lock on participant node 1 for pair [20, val_20]
+Node 1, transaction 108160895877156 has locked keys: 20, 
+server is COMMITTING and calling handle_commit with txn 108160895877156
+Putting on participant node 1 for key [20]
+Releasing lock on participant node 1 for key [20]
+server is PREPARING and calling handle_prepare with txn 108160896140101
+Acquired lock on participant node 1 for pair [0, val_0]
+Node 1, transaction 108160896140101 has locked keys: 0, 
+server is PREPARING and calling handle_prepare with txn 108160895877157
+Acquired lock on participant node 1 for pair [29, val_29]
+Node 1, transaction 108160895877157 has locked keys: 29, 
+Acquired lock on participant node 1 for pair [36, val_36]
+Node 1, transaction 108160895877157 has locked keys: 29, 36, 
+server is COMMITTING and calling handle_commit with txn 108160896140101
+Putting on participant node 1 for key [0]
+Releasing lock on participant node 1 for key [0]
+server is COMMITTING and calling handle_commit with txn 108160895877157
+Putting on participant node 1 for key [29]
+Putting on participant node 1 for key [36]
+Releasing lock on participant node 1 for key [29]
+Releasing lock on participant node 1 for key [36]
+server is PREPARING and calling handle_prepare with txn 108160895942694
+Acquired lock on participant node 1 for pair [25, val_25]
+Node 1, transaction 108160895942694 has locked keys: 25, 
+server is COMMITTING and calling handle_commit with txn 108160895942694
+Putting on participant node 1 for key [25]
+Releasing lock on participant node 1 for key [25]
+server is PREPARING and calling handle_prepare with txn 108160896205638
+Acquired lock on participant node 1 for pair [76, val_76]
+Node 1, transaction 108160896205638 has locked keys: 76, 
+server is PREPARING and calling handle_prepare with txn 108160896008231
+Acquired lock on participant node 1 for pair [12, val_12]
+Node 1, transaction 108160896008231 has locked keys: 12, 
+server is COMMITTING and calling handle_commit with txn 108160896205638
+Putting on participant node 1 for key [76]
+Releasing lock on participant node 1 for key [76]
+server is COMMITTING and calling handle_commit with txn 108160896008231
+Putting on participant node 1 for key [12]
+Releasing lock on participant node 1 for key [12]
+server is PREPARING and calling handle_prepare with txn 108160896271175
+Acquired lock on participant node 1 for pair [33, val_33]
+Node 1, transaction 108160896271175 has locked keys: 33, 
+server is COMMITTING and calling handle_commit with txn 108160896271175
+Putting on participant node 1 for key [33]
+Releasing lock on participant node 1 for key [33]
+server is PREPARING and calling handle_prepare with txn 108160896073769
+Acquired lock on participant node 1 for pair [69, val_69]
+Node 1, transaction 108160896073769 has locked keys: 69, 
+server is COMMITTING and calling handle_commit with txn 108160896073769
+Putting on participant node 1 for key [69]
+Releasing lock on participant node 1 for key [69]
+server is PREPARING and calling handle_prepare with txn 108160896336712
+Acquired lock on participant node 1 for pair [80, val_80]
+Node 1, transaction 108160896336712 has locked keys: 80, 
+server is PREPARING and calling handle_prepare with txn 108160896139306
+Acquired lock on participant node 1 for pair [57, val_57]
+Node 1, transaction 108160896139306 has locked keys: 57, 
+server is COMMITTING and calling handle_commit with txn 108160896336712
+Putting on participant node 1 for key [80]
+Releasing lock on participant node 1 for key [80]
+server is COMMITTING and calling handle_commit with txn 108160896139306
+Putting on participant node 1 for key [57]
+Releasing lock on participant node 1 for key [57]
+server is PREPARING and calling handle_prepare with txn 108160896402249
+Acquired lock on participant node 1 for pair [5, val_5]
+Node 1, transaction 108160896402249 has locked keys: 5, 
+server is ABORTING and calling handle_abort with txn 108348721201689
+entering handle_abort for node 1
+Aborted so Releasing lock on participant node 1 for key [32]
+Abort for txn 108348721201689 complete
+Attempting multiput: 69 val_69, 93 val_93, 95 val_95, 
+server is PREPARING and calling handle_prepare with txn 108348852011547
+Acquired lock on participant node 1 for pair [73, val_73]
+Node 1, transaction 108348852011547 has locked keys: 73, 
+server is COMMITTING and calling handle_commit with txn 108348852011547
+Putting on participant node 1 for key [73]
+Releasing lock on participant node 1 for key [73]
+Acquired lock on coordinator node 1 for pair [69, val_69]
+Acquired lock on coordinator node 1 for pair [93, val_93]
+Node 1, transaction 108019795951894 has locked keys:, 69, 93
+SENDING commit to participant node 0 for txn 108019795951894
+SENDING commit to participant node 2 for txn 108019795951894
+SENDING commit to participant node 3 for txn 108019795951894
+Putting on coordinator node 1 for key [69]
+Putting on coordinator node 1 for key [93]
+Releasing lock on coordinator node 1 for key [69]
+Releasing lock on coordinator node 1 for key [93]
+Attempting multiput: 88 val_88, 43 val_43, 
+server is PREPARING and calling handle_prepare with txn 108348852142620
+Acquired lock on participant node 1 for pair [77, val_77]
+Node 1, transaction 108348852142620 has locked keys: 77, 
+Acquired lock on coordinator node 1 for pair [88, val_88]
+Node 1, transaction 108019796017431 has locked keys:, 88
+server is COMMITTING and calling handle_commit with txn 108348852142620
+Putting on participant node 1 for key [77]
+Releasing lock on participant node 1 for key [77]
+SENDING commit to participant node 0 for txn 108019796017431
+SENDING commit to participant node 3 for txn 108019796017431
+Putting on coordinator node 1 for key [88]
+Releasing lock on coordinator node 1 for key [88]
+Success multiputting 88 val_88, 43 val_43, 
+Attempting multiput: 35 val_35, 50 val_50, 49 val_49, 
+server is PREPARING and calling handle_prepare with txn 108160960626732
+Acquired lock on participant node 1 for pair [33, val_33]
+Node 1, transaction 108160960626732 has locked keys: 33, 
+server is COMMITTING and calling handle_commit with txn 108160960626732
+Putting on participant node 1 for key [33]
+Releasing lock on participant node 1 for key [33]
+Acquired lock on coordinator node 1 for pair [49, val_49]
+Node 1, transaction 108019796082968 has locked keys:, 49
+server is PREPARING and calling handle_prepare with txn 108348852208157
+server is PREPARING and calling handle_prepare with txn 108160961282890
+Acquired lock on participant node 1 for pair [85, val_85]
+Node 1, transaction 108160961282890 has locked keys: 85, 
+Acquired lock on participant node 1 for pair [96, val_96]
+Node 1, transaction 108160961282890 has locked keys: 85, 96, 
+server is COMMITTING and calling handle_commit with txn 108160961282890
+Putting on participant node 1 for key [85]
+Putting on participant node 1 for key [96]
+Releasing lock on participant node 1 for key [85]
+Releasing lock on participant node 1 for key [96]
+server is PREPARING and calling handle_prepare with txn 108160961413963
+Acquired lock on participant node 1 for pair [32, val_32]
+Node 1, transaction 108160961413963 has locked keys: 32, 
+Acquired lock on participant node 1 for pair [48, val_48]
+Node 1, transaction 108160961413963 has locked keys: 32, 48, 
+server is COMMITTING and calling handle_commit with txn 108160961413963
+Putting on participant node 1 for key [32]
+Putting on participant node 1 for key [48]
+Releasing lock on participant node 1 for key [32]
+Releasing lock on participant node 1 for key [48]
+server is PREPARING and calling handle_prepare with txn 108160961479500
+Acquired lock on participant node 1 for pair [20, val_20]
+Node 1, transaction 108160961479500 has locked keys: 20, 
+server is COMMITTING and calling handle_commit with txn 108160961479500
+Putting on participant node 1 for key [20]
+Releasing lock on participant node 1 for key [20]
+server is PREPARING and calling handle_prepare with txn 108160961610574
+Acquired lock on participant node 1 for pair [93, val_93]
+Node 1, transaction 108160961610574 has locked keys: 93, 
+server is COMMITTING and calling handle_commit with txn 108160961610574
+Putting on participant node 1 for key [93]
+Releasing lock on participant node 1 for key [93]
+server is PREPARING and calling handle_prepare with txn 108160961676111
+server is ABORTING and calling handle_abort with txn 108160896402249
+entering handle_abort for node 1
+Aborted so Releasing lock on participant node 1 for key [5]
+Abort for txn 108160896402249 complete
+Acquired lock on participant node 1 for pair [5, val_5]
+Node 1, transaction 108160961676111 has locked keys: 5, 
+server is PREPARING and calling handle_prepare with txn 108160960692269
+Acquired lock on participant node 1 for pair [45, val_45]
+Node 1, transaction 108160960692269 has locked keys: 45, 
+Acquired lock on participant node 1 for pair [92, val_92]
+Node 1, transaction 108160960692269 has locked keys: 45, 92, 
+server is COMMITTING and calling handle_commit with txn 108160960692269
+Putting on participant node 1 for key [45]
+Putting on participant node 1 for key [92]
+Releasing lock on participant node 1 for key [45]
+Releasing lock on participant node 1 for key [92]
+SENDING commit to participant node 2 for txn 108019797197081
+SENDING commit to participant node 3 for txn 108019797197081
+Success putting 42
+Acquired lock on coordinator node 1 for pair [16, val_16]
+Node 1, transaction 108019797262618 has locked keys:, 16
+SENDING commit to participant node 0 for txn 108019797262618
+Putting on coordinator node 1 for key [16]
+Releasing lock on coordinator node 1 for key [16]
+Attempting multiput: 86 val_86, 98 val_98, 95 val_95, 
+server is PREPARING and calling handle_prepare with txn 108160961871919
+Acquired lock on participant node 1 for pair [73, val_73]
+Node 1, transaction 108160961871919 has locked keys: 73, 
+server is COMMITTING and calling handle_commit with txn 108160961871919
+Putting on participant node 1 for key [73]
+Releasing lock on participant node 1 for key [73]
+SENDING commit to participant node 0 for txn 108019797262619
+SENDING commit to participant node 2 for txn 108019797262619
+SENDING commit to participant node 3 for txn 108019797262619
+Success multiputting 86 val_86, 98 val_98, 95 val_95, 
+Attempting multiput: 69 val_69, 13 val_13, 87 val_87, 
+Acquired lock on coordinator node 1 for pair [13, val_13]
+Acquired lock on coordinator node 1 for pair [69, val_69]
+Node 1, transaction 108019797393692 has locked keys:, 13, 69
+SENDING commit to participant node 0 for txn 108019797393692
+SENDING commit to participant node 2 for txn 108019797393692
+SENDING commit to participant node 3 for txn 108019797393692
+Putting on coordinator node 1 for key [13]
+Putting on coordinator node 1 for key [69]
+Releasing lock on coordinator node 1 for key [13]
+Releasing lock on coordinator node 1 for key [69]
+server is PREPARING and calling handle_prepare with txn 108160961937458
+Acquired lock on participant node 1 for pair [57, val_57]
+Node 1, transaction 108160961937458 has locked keys: 57, 
+Attempting multiput: 2 val_2, 96 val_96, 32 val_32, 
+Acquired lock on coordinator node 1 for pair [32, val_32]
+Acquired lock on coordinator node 1 for pair [96, val_96]
+Node 1, transaction 108019797459229 has locked keys:, 32, 96
+SENDING commit to participant node 0 for txn 108019797459229
+SENDING commit to participant node 2 for txn 108019797459229
+SENDING commit to participant node 3 for txn 108019797459229
+Putting on coordinator node 1 for key [32]
+Putting on coordinator node 1 for key [96]
+Releasing lock on coordinator node 1 for key [32]
+Releasing lock on coordinator node 1 for key [96]
+Acquired lock on coordinator node 1 for pair [44, val_44]
+Node 1, transaction 108019797590302 has locked keys:, 44
+SENDING commit to participant node 0 for txn 108019797590302
+Putting on coordinator node 1 for key [44]
+Releasing lock on coordinator node 1 for key [44]
+Acquired lock on coordinator node 1 for pair [32, val_32]
+Node 1, transaction 108019797590303 has locked keys:, 32
+SENDING commit to participant node 0 for txn 108019797590303
+Putting on coordinator node 1 for key [32]
+Releasing lock on coordinator node 1 for key [32]
+Acquired lock on coordinator node 1 for pair [77, val_77]
+Node 1, transaction 108019797590304 has locked keys:, 77
+SENDING commit to participant node 2 for txn 108019797590304
+Putting on coordinator node 1 for key [77]
+Releasing lock on coordinator node 1 for key [77]
+Attempting multiput: 41 val_41, 22 val_22, 
+Acquired lock on coordinator node 1 for pair [41, val_41]
+Node 1, transaction 108019797655841 has locked keys:, 41
+SENDING commit to participant node 2 for txn 108019797655841
+SENDING commit to participant node 3 for txn 108019797655841
+Putting on coordinator node 1 for key [41]
+Releasing lock on coordinator node 1 for key [41]
+Attempting multiput: 37 val_37, 4 val_4, 77 val_77, 
+Acquired lock on coordinator node 1 for pair [4, val_4]
+Acquired lock on coordinator node 1 for pair [37, val_37]
+Acquired lock on coordinator node 1 for pair [77, val_77]
+Node 1, transaction 108019797721378 has locked keys:, 4, 37, 77
+SENDING commit to participant node 0 for txn 108019797721378
+SENDING commit to participant node 2 for txn 108019797721378
+Putting on coordinator node 1 for key [4]
+Putting on coordinator node 1 for key [37]
+Putting on coordinator node 1 for key [77]
+Releasing lock on coordinator node 1 for key [4]
+Releasing lock on coordinator node 1 for key [37]
+Releasing lock on coordinator node 1 for key [77]
+All-locked unsuccessful on participant node 1, txn_id 108348852208157
+SENDING abort to participant node 0 for txn 108019796082968
+server is ABORTING and calling handle_abort with txn 108348852208157
+entering handle_abort for node 1
+Abort for txn 108348852208157 complete
+SENDING abort to participant node 2 for txn 108019796082968
+SENDING abort to participant node 3 for txn 108019796082968
+NOT putting on coordinator node 1 for key [49], just releasing lock
+server is COMMITTING and calling handle_commit with txn 108160961937458
+Putting on participant node 1 for key [57]
+Releasing lock on participant node 1 for key [57]
+Acquired lock on coordinator node 1 for pair [25, val_25]
+Node 1, transaction 108019861750051 has locked keys:, 25
+SENDING commit to participant node 2 for txn 108019861750051
+Putting on coordinator node 1 for key [25]
+Releasing lock on coordinator node 1 for key [25]
+Acquired lock on coordinator node 1 for pair [76, val_76]
+Node 1, transaction 108019861815588 has locked keys:, 76
+Attempting multiput: 49 val_49, 84 val_84, 29 val_29, 
+SENDING commit to participant node 0 for txn 108019861815588
+Putting on coordinator node 1 for key [76]
+Releasing lock on coordinator node 1 for key [76]
+Acquired lock on coordinator node 1 for pair [29, val_29]
+Acquired lock on coordinator node 1 for pair [49, val_49]
+Acquired lock on coordinator node 1 for pair [84, val_84]
+Node 1, transaction 108019861815589 has locked keys:, 29, 49, 84
+server is PREPARING and calling handle_prepare with txn 108348917940767
+Acquired lock on participant node 1 for pair [97, val_97]
+Node 1, transaction 108348917940767 has locked keys: 97, 
+SENDING commit to participant node 0 for txn 108019861815589
+SENDING commit to participant node 2 for txn 108019861815589
+Putting on coordinator node 1 for key [29]
+Putting on coordinator node 1 for key [49]
+Putting on coordinator node 1 for key [84]
+Releasing lock on coordinator node 1 for key [29]
+Releasing lock on coordinator node 1 for key [49]
+Releasing lock on coordinator node 1 for key [84]
+Attempting multiput: 44 val_44, 42 val_42, 
+server is COMMITTING and calling handle_commit with txn 108348917940767
+Putting on participant node 1 for key [97]
+Releasing lock on participant node 1 for key [97]
+server is PREPARING and calling handle_prepare with txn 108161026424884
+Acquired lock on participant node 1 for pair [69, val_69]
+Node 1, transaction 108161026424884 has locked keys: 69, 
+SENDING commit to participant node 0 for txn 108019861815590
+SENDING commit to participant node 3 for txn 108019861815590
+Success putting 31
+server is COMMITTING and calling handle_commit with txn 108161026424884
+Putting on participant node 1 for key [69]
+Releasing lock on participant node 1 for key [69]
+Acquired lock on coordinator node 1 for pair [44, val_44]
+Node 1, transaction 108019861881127 has locked keys:, 44
+server is PREPARING and calling handle_prepare with txn 108161026490421
+Acquired lock on participant node 1 for pair [80, val_80]
+Node 1, transaction 108161026490421 has locked keys: 80, 
+SENDING commit to participant node 0 for txn 108019861881127
+SENDING commit to participant node 2 for txn 108019861881127
+SENDING commit to participant node 3 for txn 108019861881127
+Putting on coordinator node 1 for key [44]
+Releasing lock on coordinator node 1 for key [44]
+server is COMMITTING and calling handle_commit with txn 108161026490421
+Putting on participant node 1 for key [80]
+Releasing lock on participant node 1 for key [80]
+SENDING commit to participant node 2 for txn 108019861946664
+SENDING commit to participant node 3 for txn 108019861946664
+Success putting 34
+Attempting multiput: 57 val_57, 0 val_0, 16 val_16, 
+Acquired lock on coordinator node 1 for pair [0, val_0]
+Acquired lock on coordinator node 1 for pair [16, val_16]
+Acquired lock on coordinator node 1 for pair [57, val_57]
+Node 1, transaction 108019861946665 has locked keys:, 0, 16, 57
+server is PREPARING and calling handle_prepare with txn 108161026555958
+Acquired lock on participant node 1 for pair [73, val_73]
+Node 1, transaction 108161026555958 has locked keys: 73, 
+SENDING commit to participant node 0 for txn 108019861946665
+SENDING commit to participant node 2 for txn 108019861946665
+Putting on coordinator node 1 for key [0]
+Putting on coordinator node 1 for key [16]
+Putting on coordinator node 1 for key [57]
+Releasing lock on coordinator node 1 for key [0]
+Releasing lock on coordinator node 1 for key [16]
+Releasing lock on coordinator node 1 for key [57]
+Attempting multiput: 83 val_83, 11 val_11, 98 val_98, 
+server is COMMITTING and calling handle_commit with txn 108161026555958
+Putting on participant node 1 for key [73]
+Releasing lock on participant node 1 for key [73]
+server is PREPARING and calling handle_prepare with txn 108348918137377
+Acquired lock on participant node 1 for pair [13, val_13]
+Node 1, transaction 108348918137377 has locked keys: 13, 
+Acquired lock on participant node 1 for pair [53, val_53]
+Node 1, transaction 108348918137377 has locked keys: 13, 53, 
+SENDING commit to participant node 0 for txn 108019862012202
+SENDING commit to participant node 2 for txn 108019862012202
+SENDING commit to participant node 3 for txn 108019862012202
+Success multiputting 83 val_83, 11 val_11, 98 val_98, 
+server is PREPARING and calling handle_prepare with txn 108161026621495
+Acquired lock on participant node 1 for pair [36, val_36]
+Node 1, transaction 108161026621495 has locked keys: 36, 
+Acquired lock on coordinator node 1 for pair [37, val_37]
+Node 1, transaction 108019862077739 has locked keys:, 37
+server is COMMITTING and calling handle_commit with txn 108161026621495
+Putting on participant node 1 for key [36]
+Releasing lock on participant node 1 for key [36]
+SENDING commit to participant node 2 for txn 108019862077739
+Putting on coordinator node 1 for key [37]
+Releasing lock on coordinator node 1 for key [37]
+server is PREPARING and calling handle_prepare with txn 108161026621496
+Acquired lock on participant node 1 for pair [73, val_73]
+Node 1, transaction 108161026621496 has locked keys: 73, 
+Acquired lock on participant node 1 for pair [97, val_97]
+Node 1, transaction 108161026621496 has locked keys: 73, 97, 
+Acquired lock on coordinator node 1 for pair [1, val_1]
+Node 1, transaction 108019862077740 has locked keys:, 1
+server is COMMITTING and calling handle_commit with txn 108161026621496
+Putting on participant node 1 for key [73]
+Putting on participant node 1 for key [97]
+Releasing lock on participant node 1 for key [73]
+Releasing lock on participant node 1 for key [97]
+SENDING commit to participant node 2 for txn 108019862077740
+Putting on coordinator node 1 for key [1]
+Releasing lock on coordinator node 1 for key [1]
+Attempting multiput: 27 val_27, 60 val_60, 81 val_81, 
+Acquired lock on coordinator node 1 for pair [60, val_60]
+Acquired lock on coordinator node 1 for pair [81, val_81]
+Node 1, transaction 108019862143277 has locked keys:, 60, 81
+SENDING commit to participant node 0 for txn 108019862143277
+SENDING commit to participant node 2 for txn 108019862143277
+SENDING commit to participant node 3 for txn 108019862143277
+Putting on coordinator node 1 for key [60]
+Putting on coordinator node 1 for key [81]
+Releasing lock on coordinator node 1 for key [60]
+Releasing lock on coordinator node 1 for key [81]
+Attempting multiput: 83 val_83, 78 val_78, 74 val_74, 
+SENDING commit to participant node 0 for txn 108019862143278
+SENDING commit to participant node 2 for txn 108019862143278
+SENDING commit to participant node 3 for txn 108019862143278
+Success multiputting 83 val_83, 78 val_78, 74 val_74, 
+SENDING commit to participant node 0 for txn 108019862274351
+SENDING commit to participant node 3 for txn 108019862274351
+Success putting 55
+server is PREPARING and calling handle_prepare with txn 108161026818106
+Acquired lock on participant node 1 for pair [24, val_24]
+Node 1, transaction 108161026818106 has locked keys: 24, 
+Acquired lock on participant node 1 for pair [64, val_64]
+Node 1, transaction 108161026818106 has locked keys: 24, 64, 
+server is COMMITTING and calling handle_commit with txn 108161026818106
+Putting on participant node 1 for key [24]
+Putting on participant node 1 for key [64]
+Releasing lock on participant node 1 for key [24]
+Releasing lock on participant node 1 for key [64]
+SENDING commit to participant node 2 for txn 108019862274352
+SENDING commit to participant node 3 for txn 108019862274352
+Success putting 82
+server is PREPARING and calling handle_prepare with txn 108161026883643
+Acquired lock on participant node 1 for pair [33, val_33]
+Node 1, transaction 108161026883643 has locked keys: 33, 
+Acquired lock on participant node 1 for pair [96, val_96]
+Node 1, transaction 108161026883643 has locked keys: 33, 96, 
+server is COMMITTING and calling handle_commit with txn 108161026883643
+Putting on participant node 1 for key [33]
+Putting on participant node 1 for key [96]
+Releasing lock on participant node 1 for key [33]
+Releasing lock on participant node 1 for key [96]
+SENDING commit to participant node 2 for txn 108019862339889
+SENDING commit to participant node 3 for txn 108019862339889
+Success putting 2
+server is PREPARING and calling handle_prepare with txn 108161026949180
+Acquired lock on participant node 1 for pair [41, val_41]
+Node 1, transaction 108161026949180 has locked keys: 41, 
+server is COMMITTING and calling handle_commit with txn 108161026949180
+Putting on participant node 1 for key [41]
+Releasing lock on participant node 1 for key [41]
+SENDING commit to participant node 0 for txn 108019862405426
+SENDING commit to participant node 3 for txn 108019862405426
+Success putting 35
+server is PREPARING and calling handle_prepare with txn 108161027014717
+Acquired lock on participant node 1 for pair [1, val_1]
+Node 1, transaction 108161027014717 has locked keys: 1, 
+Acquired lock on participant node 1 for pair [57, val_57]
+Node 1, transaction 108161027014717 has locked keys: 1, 57, 
+Acquired lock on participant node 1 for pair [77, val_77]
+Node 1, transaction 108161027014717 has locked keys: 1, 57, 77, 
+server is ABORTING and calling handle_abort with txn 108160961676111
+entering handle_abort for node 1
+Aborted so Releasing lock on participant node 1 for key [5]
+Abort for txn 108160961676111 complete
+server is COMMITTING and calling handle_commit with txn 108161027014717
+Putting on participant node 1 for key [1]
+Putting on participant node 1 for key [57]
+Putting on participant node 1 for key [77]
+Releasing lock on participant node 1 for key [1]
+Releasing lock on participant node 1 for key [57]
+Releasing lock on participant node 1 for key [77]
+Acquired lock on coordinator node 1 for pair [97, val_97]
+Node 1, transaction 108019862470963 has locked keys:, 97
+server is COMMITTING and calling handle_commit with txn 108348918137377
+Putting on participant node 1 for key [13]
+Putting on participant node 1 for key [53]
+Releasing lock on participant node 1 for key [13]
+Releasing lock on participant node 1 for key [53]
+SENDING commit to participant node 2 for txn 108019862470963
+Putting on coordinator node 1 for key [97]
+Releasing lock on coordinator node 1 for key [97]
+server is PREPARING and calling handle_prepare with txn 108348918596130
+Acquired lock on participant node 1 for pair [68, val_68]
+Node 1, transaction 108348918596130 has locked keys: 68, 
+SENDING commit to participant node 2 for txn 108019862470964
+SENDING commit to participant node 3 for txn 108019862470964
+Success putting 74
+server is PREPARING and calling handle_prepare with txn 108161027080254
+server is COMMITTING and calling handle_commit with txn 108348918596130
+Putting on participant node 1 for key [68]
+Releasing lock on participant node 1 for key [68]
+Acquired lock on participant node 1 for pair [8, val_8]
+Node 1, transaction 108161027080254 has locked keys: 8, 
+Acquired lock on participant node 1 for pair [57, val_57]
+Node 1, transaction 108161027080254 has locked keys: 8, 57, 
+Acquired lock on coordinator node 1 for pair [45, val_45]
+Node 1, transaction 108019862536502 has locked keys:, 45
+server is PREPARING and calling handle_prepare with txn 108161027080255
+Acquired lock on participant node 1 for pair [1, val_1]
+Node 1, transaction 108161027080255 has locked keys: 1, 
+Acquired lock on participant node 1 for pair [77, val_77]
+Node 1, transaction 108161027080255 has locked keys: 1, 77, 
+SENDING commit to participant node 2 for txn 108019862536502
+Putting on coordinator node 1 for key [45]
+Releasing lock on coordinator node 1 for key [45]
+SENDING commit to participant node 2 for txn 108019862470965
+SENDING commit to participant node 3 for txn 108019862470965
+Success putting 2
+server is COMMITTING and calling handle_commit with txn 108161027080255
+Putting on participant node 1 for key [1]
+Putting on participant node 1 for key [77]
+Releasing lock on participant node 1 for key [1]
+Releasing lock on participant node 1 for key [77]
+server is PREPARING and calling handle_prepare with txn 108161027343185
+Acquired lock on participant node 1 for pair [68, val_68]
+Node 1, transaction 108161027343185 has locked keys: 68, 
+Acquired lock on coordinator node 1 for pair [25, val_25]
+Node 1, transaction 108019862536504 has locked keys:, 25
+server is COMMITTING and calling handle_commit with txn 108161027343185
+Putting on participant node 1 for key [68]
+Releasing lock on participant node 1 for key [68]
+SENDING commit to participant node 2 for txn 108019862536503
+SENDING commit to participant node 3 for txn 108019862536503
+Success putting 6
+server is PREPARING and calling handle_prepare with txn 108161027145792
+SENDING commit to participant node 2 for txn 108019862536504
+Putting on coordinator node 1 for key [25]
+Releasing lock on coordinator node 1 for key [25]
+Acquired lock on participant node 1 for pair [25, val_25]
+Node 1, transaction 108161027145792 has locked keys: 25, 
+Acquired lock on participant node 1 for pair [68, val_68]
+Node 1, transaction 108161027145792 has locked keys: 25, 68, 
+server is PREPARING and calling handle_prepare with txn 108348918661667
+Acquired lock on participant node 1 for pair [12, val_12]
+Node 1, transaction 108348918661667 has locked keys: 12, 
+server is COMMITTING and calling handle_commit with txn 108161027145792
+Putting on participant node 1 for key [25]
+Putting on participant node 1 for key [68]
+Releasing lock on participant node 1 for key [25]
+Releasing lock on participant node 1 for key [68]
+server is PREPARING and calling handle_prepare with txn 108161027343186
+Acquired lock on participant node 1 for pair [33, val_33]
+Node 1, transaction 108161027343186 has locked keys: 33, 
+Acquired lock on participant node 1 for pair [88, val_88]
+Node 1, transaction 108161027343186 has locked keys: 33, 88, 
+server is COMMITTING and calling handle_commit with txn 108161027343186
+Putting on participant node 1 for key [33]
+Putting on participant node 1 for key [88]
+Releasing lock on participant node 1 for key [33]
+Releasing lock on participant node 1 for key [88]
+server is PREPARING and calling handle_prepare with txn 108161027211329
+Acquired lock on participant node 1 for pair [56, val_56]
+Node 1, transaction 108161027211329 has locked keys: 56, 
+Acquired lock on participant node 1 for pair [97, val_97]
+Node 1, transaction 108161027211329 has locked keys: 56, 97, 
+server is COMMITTING and calling handle_commit with txn 108161027211329
+Putting on participant node 1 for key [56]
+Putting on participant node 1 for key [97]
+Releasing lock on participant node 1 for key [56]
+Releasing lock on participant node 1 for key [97]
+server is PREPARING and calling handle_prepare with txn 108161027539796
+Acquired lock on participant node 1 for pair [0, val_0]
+Node 1, transaction 108161027539796 has locked keys: 0, 
+server is PREPARING and calling handle_prepare with txn 108161027539797
+Acquired lock on participant node 1 for pair [5, val_5]
+Node 1, transaction 108161027539797 has locked keys: 5, 
+server is COMMITTING and calling handle_commit with txn 108161027539796
+Putting on participant node 1 for key [0]
+Releasing lock on participant node 1 for key [0]
+server is PREPARING and calling handle_prepare with txn 108161027605334
+server is ABORTING and calling handle_abort with txn 108161027080254
+entering handle_abort for node 1
+Aborted so Releasing lock on participant node 1 for key [8]
+Aborted so Releasing lock on participant node 1 for key [57]
+Abort for txn 108161027080254 complete
+Attempting multiput: 59 val_59, 16 val_16, 
+Acquired lock on coordinator node 1 for pair [16, val_16]
+Node 1, transaction 108019928138042 has locked keys:, 16
+SENDING abort to participant node 0 for txn 108019862602041
+SENDING abort to participant node 3 for txn 108019862602041
+Acquired lock on coordinator node 1 for pair [13, val_13]
+Node 1, transaction 108019928138043 has locked keys:, 13
+server is ABORTING and calling handle_abort with txn 108348918661667
+entering handle_abort for node 1
+Aborted so Releasing lock on participant node 1 for key [12]
+Abort for txn 108348918661667 complete
+SENDING commit to participant node 0 for txn 108019928138042
+SENDING commit to participant node 3 for txn 108019928138042
+Putting on coordinator node 1 for key [16]
+Releasing lock on coordinator node 1 for key [16]
+SENDING commit to participant node 2 for txn 108019928138043
+Putting on coordinator node 1 for key [13]
+Releasing lock on coordinator node 1 for key [13]
+server is PREPARING and calling handle_prepare with txn 108348984328740
+Acquired lock on participant node 1 for pair [52, val_52]
+Node 1, transaction 108348984328740 has locked keys: 52, 
+Attempting multiput: 82 val_82, 16 val_16, Attempting multiput: 
+76 val_76, 22 val_22, 
+server is COMMITTING and calling handle_commit with txn 108348984328740
+Putting on participant node 1 for key [52]
+Releasing lock on participant node 1 for key [52]
+Acquired lock on coordinator node 1 for pair [16, val_16]
+Node 1, transaction 108019928203580 has locked keys:, 16
+Acquired lock on coordinator node 1 for pair [76, val_76]
+Node 1, transaction 108019928203581 has locked keys:, 76
+SENDING commit to participant node 0 for txn 108019928203580
+SENDING commit to participant node 2 for txn 108019928203580
+SENDING commit to participant node 3 for txn 108019928203580
+Putting on coordinator node 1 for key [16]
+Releasing lock on coordinator node 1 for key [16]
+server is ABORTING and calling handle_abort with txn 108161027539797
+entering handle_abort for node 1
+Aborted so Releasing lock on participant node 1 for key [5]
+Abort for txn 108161027539797 complete
+Acquired lock on participant node 1 for pair [5, val_5]
+Node 1, transaction 108161027605334 has locked keys: 5, 
+Acquired lock on participant node 1 for pair [36, val_36]
+Node 1, transaction 108161027605334 has locked keys: 5, 36, 
+Acquired lock on coordinator node 1 for pair [21, val_21]
+Node 1, transaction 108019928334654 has locked keys:, 21
+server is PREPARING and calling handle_prepare with txn 108161093141336
+Acquired lock on participant node 1 for pair [37, val_37]
+Node 1, transaction 108161093141336 has locked keys: 37, 
+SENDING commit to participant node 2 for txn 108019928334654
+Putting on coordinator node 1 for key [21]
+Releasing lock on coordinator node 1 for key [21]
+Attempting multiput: 2 val_2, 19 val_19, 
+server is COMMITTING and calling handle_commit with txn 108161093141336
+Putting on participant node 1 for key [37]
+Releasing lock on participant node 1 for key [37]
+SENDING commit to participant node 0 for txn 108019928400191
+SENDING commit to participant node 2 for txn 108019928400191
+SENDING commit to participant node 3 for txn 108019928400191
+Success multiputting 2 val_2, 19 val_19, 
+server is PREPARING and calling handle_prepare with txn 108348984590888
+Acquired lock on participant node 1 for pair [17, val_17]
+Node 1, transaction 108348984590888 has locked keys: 17, 
+Acquired lock on coordinator node 1 for pair [25, val_25]
+Node 1, transaction 108019928465728 has locked keys:, 25
+server is COMMITTING and calling handle_commit with txn 108348984590888
+Putting on participant node 1 for key [17]
+Releasing lock on participant node 1 for key [17]
+SENDING commit to participant node 2 for txn 108019928465728
+Putting on coordinator node 1 for key [25]
+Releasing lock on coordinator node 1 for key [25]
+server is PREPARING and calling handle_prepare with txn 108348984590889
+Acquired lock on participant node 1 for pair [92, val_92]
+Node 1, transaction 108348984590889 has locked keys: 92, 
+server is COMMITTING and calling handle_commit with txn 108348984590889
+Putting on participant node 1 for key [92]
+Releasing lock on participant node 1 for key [92]
+server is PREPARING and calling handle_prepare with txn 108348984656426
+Acquired lock on participant node 1 for pair [97, val_97]
+Node 1, transaction 108348984656426 has locked keys: 97, 
+server is COMMITTING and calling handle_commit with txn 108348984656426
+Putting on participant node 1 for key [97]
+Releasing lock on participant node 1 for key [97]
+Attempting multiput: 76 val_76, 98 val_98, 
+server is PREPARING and calling handle_prepare with txn 108348984721963
+Acquired lock on participant node 1 for pair [81, val_81]
+Node 1, transaction 108348984721963 has locked keys: 81, 
+server is COMMITTING and calling handle_commit with txn 108348984721963
+Putting on participant node 1 for key [81]
+Releasing lock on participant node 1 for key [81]
+server is PREPARING and calling handle_prepare with txn 108348984853036
+Acquired lock on participant node 1 for pair [4, val_4]
+Node 1, transaction 108348984853036 has locked keys: 4, 
+server is COMMITTING and calling handle_commit with txn 108348984853036
+Putting on participant node 1 for key [4]
+Releasing lock on participant node 1 for key [4]
+server is PREPARING and calling handle_prepare with txn 108348984918573
+Acquired lock on participant node 1 for pair [84, val_84]
+Node 1, transaction 108348984918573 has locked keys: 84, 
+server is COMMITTING and calling handle_commit with txn 108348984918573
+Putting on participant node 1 for key [84]
+Releasing lock on participant node 1 for key [84]
+server is PREPARING and calling handle_prepare with txn 108348985115184
+Acquired lock on participant node 1 for pair [45, val_45]
+Node 1, transaction 108348985115184 has locked keys: 45, 
+server is COMMITTING and calling handle_commit with txn 108348985115184
+Putting on participant node 1 for key [45]
+Releasing lock on participant node 1 for key [45]
+server is PREPARING and calling handle_prepare with txn 108348985115185
+Acquired lock on participant node 1 for pair [24, val_24]
+Node 1, transaction 108348985115185 has locked keys: 24, 
+server is COMMITTING and calling handle_commit with txn 108348985115185
+Putting on participant node 1 for key [24]
+Releasing lock on participant node 1 for key [24]
+server is PREPARING and calling handle_prepare with txn 108348985180722
+Acquired lock on participant node 1 for pair [40, val_40]
+Node 1, transaction 108348985180722 has locked keys: 40, 
+server is COMMITTING and calling handle_commit with txn 108348985180722
+Putting on participant node 1 for key [40]
+Releasing lock on participant node 1 for key [40]
+SENDING abort to participant node 0 for txn 108019928203581
+SENDING abort to participant node 2 for txn 108019928203581
+SENDING abort to participant node 3 for txn 108019928203581
+NOT putting on coordinator node 1 for key [76], just releasing lock
+Acquired lock on coordinator node 1 for pair [76, val_76]
+Node 1, transaction 108019928596801 has locked keys:, 76
+All-locked unsuccessful on participant node 1, txn_id 108161027605334
+server is ABORTING and calling handle_abort with txn 108161027605334
+entering handle_abort for node 1
+Abort for txn 108161027605334 complete
+Attempting multiput: 18 val_18, 73 val_73, 
+SENDING commit to participant node 0 for txn 108019928596801
+SENDING commit to participant node 2 for txn 108019928596801
+SENDING commit to participant node 3 for txn 108019928596801
+Putting on coordinator node 1 for key [76]
+Releasing lock on coordinator node 1 for key [76]
+Acquired lock on coordinator node 1 for pair [44, val_44]
+Node 1, transaction 108019993870659 has locked keys:, 44
+Acquired lock on coordinator node 1 for pair [73, val_73]
+Node 1, transaction 108019993870658 has locked keys:, 73
+server is PREPARING and calling handle_prepare with txn 108161158677337
+SENDING commit to participant node 0 for txn 108019993870659
+Putting on coordinator node 1 for key [44]
+Releasing lock on coordinator node 1 for key [44]
+SENDING commit to participant node 2 for txn 108019993870658
+SENDING commit to participant node 3 for txn 108019993870658
+Putting on coordinator node 1 for key [73]
+Releasing lock on coordinator node 1 for key [73]
+Attempting multiput: 50 val_50, 39 val_39, 
+server is PREPARING and calling handle_prepare with txn 108161158479938
+Acquired lock on participant node 1 for pair [1, val_1]
+Node 1, transaction 108161158479938 has locked keys: 1, 
+Acquired lock on participant node 1 for pair [49, val_49]
+Node 1, transaction 108161158479938 has locked keys: 1, 49, 
+Acquired lock on participant node 1 for pair [80, val_80]
+Node 1, transaction 108161158479938 has locked keys: 1, 49, 80, 
+server is COMMITTING and calling handle_commit with txn 108161158479938
+Putting on participant node 1 for key [1]
+Putting on participant node 1 for key [49]
+Putting on participant node 1 for key [80]
+Releasing lock on participant node 1 for key [1]
+Releasing lock on participant node 1 for key [49]
+Releasing lock on participant node 1 for key [80]
+SENDING commit to participant node 2 for txn 108019993936196
+SENDING commit to participant node 3 for txn 108019993936196
+Success putting 62
+Acquired lock on coordinator node 1 for pair [93, val_93]
+Node 1, transaction 108019994001734 has locked keys:, 93
+SENDING commit to participant node 0 for txn 108019993936197
+SENDING commit to participant node 2 for txn 108019993936197
+SENDING commit to participant node 3 for txn 108019993936197
+Success multiputting 50 val_50, 39 val_39, 
+SENDING commit to participant node 2 for txn 108019994001734
+Putting on coordinator node 1 for key [93]
+Releasing lock on coordinator node 1 for key [93]
+Acquired lock on coordinator node 1 for pair [25, val_25]
+Node 1, transaction 108019994001735 has locked keys:, 25
+server is PREPARING and calling handle_prepare with txn 108161158611012
+Acquired lock on participant node 1 for pair [4, val_4]
+Node 1, transaction 108161158611012 has locked keys: 4, 
+server is COMMITTING and calling handle_commit with txn 108161158611012
+Putting on participant node 1 for key [4]
+Releasing lock on participant node 1 for key [4]
+SENDING commit to participant node 2 for txn 108019994001735
+Putting on coordinator node 1 for key [25]
+Releasing lock on coordinator node 1 for key [25]
+Acquired lock on coordinator node 1 for pair [88, val_88]
+Node 1, transaction 108019994067272 has locked keys:, 88
+SENDING commit to participant node 0 for txn 108019994067272
+Putting on coordinator node 1 for key [88]
+Releasing lock on coordinator node 1 for key [88]
+Acquired lock on coordinator node 1 for pair [68, val_68]
+Node 1, transaction 108019994132809 has locked keys:, 68
+SENDING commit to participant node 0 for txn 108019994132809
+Putting on coordinator node 1 for key [68]
+Releasing lock on coordinator node 1 for key [68]
+Attempting multiput: 79 val_79, 99 val_99, 
+SENDING commit to participant node 0 for txn 108019994132810
+SENDING commit to participant node 3 for txn 108019994132810
+Success multiputting 79 val_79, 99 val_99, 
+Attempting multiput: 10 val_10, 93 val_93, 73 val_73, 
+SENDING commit to participant node 0 for txn 108019994198347
+SENDING commit to participant node 3 for txn 108019994198347
+Success putting 67
+Acquired lock on coordinator node 1 for pair [73, val_73]
+Acquired lock on coordinator node 1 for pair [93, val_93]
+Node 1, transaction 108019994198348 has locked keys:, 73, 93
+Acquired lock on coordinator node 1 for pair [68, val_68]
+Node 1, transaction 108019994263885 has locked keys:, 68
+SENDING commit to participant node 0 for txn 108019994263885
+Putting on coordinator node 1 for key [68]
+Releasing lock on coordinator node 1 for key [68]
+Acquired lock on coordinator node 1 for pair [20, val_20]
+Node 1, transaction 108019994329422 has locked keys:, 20
+SENDING commit to participant node 0 for txn 108019994329422
+Putting on coordinator node 1 for key [20]
+Releasing lock on coordinator node 1 for key [20]
+Attempting multiput: 37 val_37, 28 val_28, 
+Acquired lock on coordinator node 1 for pair [28, val_28]
+Acquired lock on coordinator node 1 for pair [37, val_37]
+Node 1, transaction 108019994394959 has locked keys:, 28, 37
+SENDING commit to participant node 0 for txn 108019994394959
+SENDING commit to participant node 2 for txn 108019994394959
+Putting on coordinator node 1 for key [28]
+Putting on coordinator node 1 for key [37]
+Releasing lock on coordinator node 1 for key [28]
+Releasing lock on coordinator node 1 for key [37]
+Attempting multiput: 67 val_67, 47 val_47, 24 val_24, 
+Acquired lock on coordinator node 1 for pair [24, val_24]
+Node 1, transaction 108019994394960 has locked keys:, 24
+SENDING commit to participant node 0 for txn 108019994394960
+SENDING commit to participant node 3 for txn 108019994394960
+Putting on coordinator node 1 for key [24]
+Releasing lock on coordinator node 1 for key [24]
+Attempting multiput: 87 val_87, 66 val_66, 92 val_92, 
+Acquired lock on coordinator node 1 for pair [92, val_92]
+Node 1, transaction 108019994460497 has locked keys:, 92
+SENDING commit to participant node 0 for txn 108019994460497
+SENDING commit to participant node 2 for txn 108019994460497
+SENDING commit to participant node 3 for txn 108019994460497
+Putting on coordinator node 1 for key [92]
+Releasing lock on coordinator node 1 for key [92]
+server is PREPARING and calling handle_prepare with txn 108349050847796
+Acquired lock on participant node 1 for pair [17, val_17]
+Node 1, transaction 108349050847796 has locked keys: 17, 
+Acquired lock on participant node 1 for pair [68, val_68]
+Node 1, transaction 108349050847796 has locked keys: 17, 68, 
+server is COMMITTING and calling handle_commit with txn 108349050847796
+Putting on participant node 1 for key [17]
+Putting on participant node 1 for key [68]
+Releasing lock on participant node 1 for key [17]
+Releasing lock on participant node 1 for key [68]
+server is PREPARING and calling handle_prepare with txn 108349050978870
+Acquired lock on participant node 1 for pair [72, val_72]
+Node 1, transaction 108349050978870 has locked keys: 72, 
+server is COMMITTING and calling handle_commit with txn 108349050978870
+Putting on participant node 1 for key [72]
+Releasing lock on participant node 1 for key [72]
+server is PREPARING and calling handle_prepare with txn 108349050978871
+Acquired lock on participant node 1 for pair [48, val_48]
+Node 1, transaction 108349050978871 has locked keys: 48, 
+server is COMMITTING and calling handle_commit with txn 108349050978871
+Putting on participant node 1 for key [48]
+Releasing lock on participant node 1 for key [48]
+server is PREPARING and calling handle_prepare with txn 108349051109944
+Acquired lock on participant node 1 for pair [65, val_65]
+Node 1, transaction 108349051109944 has locked keys: 65, 
+server is COMMITTING and calling handle_commit with txn 108349051109944
+Putting on participant node 1 for key [65]
+Releasing lock on participant node 1 for key [65]
+server is PREPARING and calling handle_prepare with txn 108349051241017
+Acquired lock on participant node 1 for pair [48, val_48]
+Node 1, transaction 108349051241017 has locked keys: 48, 
+Acquired lock on participant node 1 for pair [53, val_53]
+Node 1, transaction 108349051241017 has locked keys: 48, 53, 
+server is COMMITTING and calling handle_commit with txn 108349051241017
+Putting on participant node 1 for key [48]
+Putting on participant node 1 for key [53]
+Releasing lock on participant node 1 for key [48]
+Releasing lock on participant node 1 for key [53]
+server is PREPARING and calling handle_prepare with txn 108349051306554
+Acquired lock on participant node 1 for pair [20, val_20]
+Node 1, transaction 108349051306554 has locked keys: 20, 
+server is COMMITTING and calling handle_commit with txn 108349051306554
+Putting on participant node 1 for key [20]
+Releasing lock on participant node 1 for key [20]
+All-locked unsuccessful on participant node 1, txn_id 108161158677337
+server is ABORTING and calling handle_abort with txn 108161158677337
+entering handle_abort for node 1
+Abort for txn 108161158677337 complete
+SENDING commit to participant node 2 for txn 108019994591570
+SENDING commit to participant node 3 for txn 108019994591570
+Success putting 94
+SENDING commit to participant node 0 for txn 108020059537747
+SENDING commit to participant node 3 for txn 108020059537747
+Success putting 27
+server is PREPARING and calling handle_prepare with txn 108161224344411
+Acquired lock on participant node 1 for pair [52, val_52]
+Node 1, transaction 108161224344411 has locked keys: 52, 
+server is COMMITTING and calling handle_commit with txn 108161224344411
+Putting on participant node 1 for key [52]
+Releasing lock on participant node 1 for key [52]
+server is PREPARING and calling handle_prepare with txn 108349115728443
+Acquired lock on participant node 1 for pair [32, val_32]
+Node 1, transaction 108349115728443 has locked keys: 32, 
+Acquired lock on participant node 1 for pair [80, val_80]
+Node 1, transaction 108349115728443 has locked keys: 32, 80, 
+server is COMMITTING and calling handle_commit with txn 108349115728443
+Putting on participant node 1 for key [32]
+Putting on participant node 1 for key [80]
+Releasing lock on participant node 1 for key [32]
+Releasing lock on participant node 1 for key [80]
+SENDING commit to participant node 2 for txn 108020059668820
+SENDING commit to participant node 3 for txn 108020059668820
+Success putting 42
+server is PREPARING and calling handle_prepare with txn 108161224475486
+Acquired lock on participant node 1 for pair [76, val_76]
+Node 1, transaction 108161224475486 has locked keys: 76, 
+server is PREPARING and calling handle_prepare with txn 108349115859516
+Acquired lock on participant node 1 for pair [1, val_1]
+Node 1, transaction 108349115859516 has locked keys: 1, 
+server is COMMITTING and calling handle_commit with txn 108161224475486
+Putting on participant node 1 for key [76]
+Releasing lock on participant node 1 for key [76]
+server is COMMITTING and calling handle_commit with txn 108349115859516
+Putting on participant node 1 for key [1]
+Releasing lock on participant node 1 for key [1]
+SENDING commit to participant node 0 for txn 108020059734357
+SENDING commit to participant node 3 for txn 108020059734357
+Success putting 71
+SENDING abort to participant node 2 for txn 108019994198348
+SENDING abort to participant node 3 for txn 108019994198348
+NOT putting on coordinator node 1 for key [73], just releasing lock
+NOT putting on coordinator node 1 for key [93], just releasing lock
+server is PREPARING and calling handle_prepare with txn 108161224606559
+Acquired lock on participant node 1 for pair [40, val_40]
+Node 1, transaction 108161224606559 has locked keys: 40, 
+server is COMMITTING and calling handle_commit with txn 108161224606559
+Putting on participant node 1 for key [40]
+Releasing lock on participant node 1 for key [40]
+Attempting multiput: 0 val_0, 66 val_66, 47 val_47, 
+Acquired lock on coordinator node 1 for pair [0, val_0]
+Node 1, transaction 108020059799894 has locked keys:, 0
+server is PREPARING and calling handle_prepare with txn 108349115990589
+Acquired lock on participant node 1 for pair [73, val_73]
+Node 1, transaction 108349115990589 has locked keys: 73, 
+SENDING commit to participant node 0 for txn 108020059865431
+SENDING commit to participant node 0 for txn 108020059799894
+SENDING commit to participant node 3 for txn 108020059865431
+SENDING commit to participant node 2 for txn 108020059799894
+SENDING commit to participant node 3 for txn 108020059799894
+Putting on coordinator node 1 for key [0]
+Releasing lock on coordinator node 1 for key [0]
+Success putting 95
+Acquired lock on coordinator node 1 for pair [57, val_57]
+Node 1, transaction 108020059865432 has locked keys:, 57
+SENDING commit to participant node 2 for txn 108020059865432
+Putting on coordinator node 1 for key [57]
+Releasing lock on coordinator node 1 for key [57]
+server is PREPARING and calling handle_prepare with txn 108161224672096
+Acquired lock on participant node 1 for pair [60, val_60]
+Node 1, transaction 108161224672096 has locked keys: 60, 
+Acquired lock on participant node 1 for pair [69, val_69]
+Node 1, transaction 108161224672096 has locked keys: 60, 69, 
+Attempting multiput: 98 val_98, 14 val_14, 39 val_39, 
+server is COMMITTING and calling handle_commit with txn 108161224672096
+Putting on participant node 1 for key [60]
+Putting on participant node 1 for key [69]
+Releasing lock on participant node 1 for key [60]
+Releasing lock on participant node 1 for key [69]
+SENDING commit to participant node 0 for txn 108020059930969
+SENDING commit to participant node 3 for txn 108020059930969
+Success putting 55
+server is PREPARING and calling handle_prepare with txn 108161224737633
+Acquired lock on participant node 1 for pair [49, val_49]
+Node 1, transaction 108161224737633 has locked keys: 49, 
+Acquired lock on participant node 1 for pair [81, val_81]
+Node 1, transaction 108161224737633 has locked keys: 49, 81, 
+server is COMMITTING and calling handle_commit with txn 108161224737633
+Putting on participant node 1 for key [49]
+Putting on participant node 1 for key [81]
+Releasing lock on participant node 1 for key [49]
+Releasing lock on participant node 1 for key [81]
+server is PREPARING and calling handle_prepare with txn 108161224803170
+Acquired lock on participant node 1 for pair [25, val_25]
+Node 1, transaction 108161224803170 has locked keys: 25, 
+Acquired lock on participant node 1 for pair [89, val_89]
+Node 1, transaction 108161224803170 has locked keys: 25, 89, 
+server is COMMITTING and calling handle_commit with txn 108161224803170
+Putting on participant node 1 for key [25]
+Putting on participant node 1 for key [89]
+Releasing lock on participant node 1 for key [25]
+Releasing lock on participant node 1 for key [89]
+server is PREPARING and calling handle_prepare with txn 108161224868707
+Acquired lock on participant node 1 for pair [60, val_60]
+Node 1, transaction 108161224868707 has locked keys: 60, 
+server is ABORTING and calling handle_abort with txn 108349115990589
+entering handle_abort for node 1
+Aborted so Releasing lock on participant node 1 for key [73]
+Abort for txn 108349115990589 complete
+Acquired lock on participant node 1 for pair [73, val_73]
+Node 1, transaction 108161224868707 has locked keys: 60, 73, 
+Acquired lock on participant node 1 for pair [97, val_97]
+Node 1, transaction 108161224868707 has locked keys: 60, 73, 97, 
+server is COMMITTING and calling handle_commit with txn 108161224868707
+Putting on participant node 1 for key [60]
+Putting on participant node 1 for key [73]
+Putting on participant node 1 for key [97]
+Releasing lock on participant node 1 for key [60]
+Releasing lock on participant node 1 for key [73]
+Releasing lock on participant node 1 for key [97]
+SENDING abort to participant node 0 for txn 108020059930970
+SENDING abort to participant node 2 for txn 108020059930970
+SENDING abort to participant node 3 for txn 108020059930970
+Acquired lock on coordinator node 1 for pair [84, val_84]
+Node 1, transaction 108020125532507 has locked keys:, 84
+SENDING commit to participant node 0 for txn 108020125532507
+Putting on coordinator node 1 for key [84]
+Releasing lock on coordinator node 1 for key [84]
+Attempting multiput: 77 val_77, 13 val_13, 59 val_59, 
+Attempting multiput: 92 val_92, 48 val_48, 86 val_86, 
+server is PREPARING and calling handle_prepare with txn 108161290404709
+Acquired lock on participant node 1 for pair [32, val_32]
+Node 1, transaction 108161290404709 has locked keys: 32, 
+Acquired lock on coordinator node 1 for pair [13, val_13]
+Acquired lock on coordinator node 1 for pair [77, val_77]
+Node 1, transaction 108020125598044 has locked keys:, 13, 77
+server is COMMITTING and calling handle_commit with txn 108161290404709
+Putting on participant node 1 for key [32]
+Releasing lock on participant node 1 for key [32]
+SENDING commit to participant node 0 for txn 108020125598044
+Acquired lock on coordinator node 1 for pair [48, val_48]
+Acquired lock on coordinator node 1 for pair [92, val_92]
+Node 1, transaction SENDING commit to participant node 1080201255980452 has locked keys: for txn , 48, 92
+108020125598044
+SENDING commit to participant node 3 for txn 108020125598044
+Putting on coordinator node 1 for key [13]
+Putting on coordinator node 1 for key [77]
+Releasing lock on coordinator node 1 for key [13]
+Releasing lock on coordinator node 1 for key [77]
+server is PREPARING and calling handle_prepare with txn 108161290470246
+Acquired lock on participant node 1 for pair [85, val_85]
+Node 1, transaction 108161290470246 has locked keys: 85, 
+Acquired lock on coordinator node 1 for pair [72, val_72]
+Node 1, transaction 108020125663582 has locked keys:, 72
+SENDING commit to participant node 0 for txn 108020125598045
+SENDING commit to participant node 2 for txn 108020125598045
+SENDING commit to participant node 3 for txn 108020125598045
+server is COMMITTING and calling handle_commit with txn Putting on coordinator node 108161290470246
+1 for key [48]
+Putting on coordinator node 1 for key [92]
+Releasing lock on coordinator node 1 for key [48]
+Releasing lock on coordinator node 1 for key [92]
+Putting on participant node 1 for key [85]
+Releasing lock on participant node 1 for key [85]
+SENDING commit to participant node 0 for txn 108020125663582
+Putting on coordinator node 1 for key [72]
+Releasing lock on coordinator node 1 for key [72]
+Acquired lock on coordinator node 1 for pair [0, val_0]
+Node 1, transaction 108020125663583 has locked keys:, 0
+SENDING commit to participant node 0 for txn 108020125663583
+Putting on coordinator node 1 for key [0]
+Releasing lock on coordinator node 1 for key [0]
+Attempting multiput: 3 val_3, 48 val_48, 
+server is PREPARING and calling handle_prepare with txn 108161290535783
+Acquired lock on participant node 1 for pair [13, val_13]
+Node 1, transaction 108161290535783 has locked keys: 13, 
+server is COMMITTING and calling handle_commit with txn 108161290535783
+SENDING commit to participant node Putting on participant node 21 for txn  for key [13]
+108020125729120Releasing lock on participant node 
+1 for key [13]
+SENDING commit to participant node 3 for txn 108020125729120
+Success putting 2
+Acquired lock on coordinator node 1 for pair [48, val_48]
+Node 1, transaction 108020125729121 has locked keys:, 48
+Attempting multiput: 85 val_85, 14 val_14, 89 val_89, 
+SENDING commit to participant node 0 for txn 108020125729121
+SENDING commit to participant node 3 for txn 108020125729121
+Putting on coordinator node 1 for key [48]
+Releasing lock on coordinator node 1 for key [48]
+Attempting multiput: 41 val_41, 57 val_57, 
+Acquired lock on coordinator node 1 for pair [41, val_41]
+Acquired lock on coordinator node 1 for pair [57, val_57]
+Node 1, transaction 108020125794659 has locked keys:, 41, 57
+Acquired lock on coordinator node 1 for pair [85, val_85]
+Acquired lock on coordinator node 1 for pair [89, val_89]
+Node 1, transaction 108020125794658 has locked keys:, 85, 89
+SENDING commit to participant node 2 for txn 108020125794659
+SENDING commit to participant node 2 for txn 108020125794658
+Putting on coordinator node 1 for key [41]
+Putting on coordinator node 1 for key [57]
+SENDING commit to participant node 3Releasing lock on coordinator node 1 for txn  for key [41]
+108020125794658
+Releasing lock on coordinator node 1 for key [57]
+Putting on coordinator node 1 for key [85]
+Putting on coordinator node 1 for key [89]
+Releasing lock on coordinator node 1 for key [85]
+Releasing lock on coordinator node 1 for key [89]
+Acquired lock on coordinator node 1 for pair [13, val_13]
+Node 1, transaction 108020125860197 has locked keys:, 13
+SENDING commit to participant node 2 for txn 108020125860196
+SENDING commit to participant node 3 for txn 108020125860196
+Success putting 70
+SENDING commit to participant node 2 for txn 108020125860197
+Putting on coordinator node 1 for key [13]
+Releasing lock on coordinator node 1 for key [13]
+SENDING commit to participant node 0 for txn 108020125860198
+SENDING commit to participant node 3 for txn 108020125860198
+Success putting 11
+SENDING commit to participant node 2 for txn 108020125925736
+SENDING commit to participant node 3 for txn 108020125925736
+Success putting 70
+SENDING commit to participant node 2 for txn 108020125991273
+SENDING commit to participant node 3 for txn 108020125991273
+Success putting 58
+server is PREPARING and calling handle_prepare with txn 108161290797931
+Acquired lock on coordinator node 1 for pair [41, val_41]
+Node 1, transaction 108020126056810 has locked keys:, 41
+SENDING commit to participant node 2 for txn 108020126056810
+Putting on coordinator node 1 for key [41]
+Releasing lock on coordinator node 1 for key [41]
+Attempting multiput: 4 val_4, 40 val_40, 27 val_27, 
+Acquired lock on coordinator node 1 for pair [4, val_4]
+Acquired lock on coordinator node 1 for pair [40, val_40]
+Node 1, transaction 108020126056811 has locked keys:, 4, 40
+SENDING commit to participant node 0 for txn 108020126056811
+SENDING commit to participant node 3 for txn 108020126056811
+Putting on coordinator node 1 for key [4]
+Putting on coordinator node 1 for key [40]
+Releasing lock on coordinator node 1 for key [4]
+Releasing lock on coordinator node 1 for key [40]
+Acquired lock on coordinator node 1 for pair [1, val_1]
+Node 1, transaction 108020126122348 has locked keys:, 1
+SENDING commit to participant node 2 for txn 108020126122348
+Putting on coordinator node 1 for key [1]
+Releasing lock on coordinator node 1 for key [1]
+Acquired lock on coordinator node 1 for pair [9, val_9]
+Node 1, transaction 108020126187885 has locked keys:, 9
+SENDING commit to participant node 2 for txn 108020126187885
+Putting on coordinator node 1 for key [9]
+Releasing lock on coordinator node 1 for key [9]
+Acquired lock on coordinator node 1 for pair [76, val_76]
+Node 1, transaction 108020126253422 has locked keys:, 76
+SENDING commit to participant node 0 for txn 108020126253422
+Putting on coordinator node 1 for key [76]
+Releasing lock on coordinator node 1 for key [76]
+Attempting multiput: 49 val_49, 31 val_31, 1 val_1, 
+Acquired lock on coordinator node 1 for pair [1, val_1]
+Acquired lock on coordinator node 1 for pair [49, val_49]
+Node 1, transaction 108020126318959 has locked keys:, 1, 49
+SENDING commit to participant node 0 for txn 108020126318959
+SENDING commit to participant node 2 for txn 108020126318959
+SENDING commit to participant node 3 for txn 108020126318959
+Putting on coordinator node 1 for key [1]
+Putting on coordinator node 1 for key [49]
+Releasing lock on coordinator node 1 for key [1]
+Releasing lock on coordinator node 1 for key [49]
+Attempting multiput: 88 val_88, 52 val_52, 85 val_85, 
+Acquired lock on coordinator node 1 for pair [52, val_52]
+Acquired lock on coordinator node 1 for pair [85, val_85]
+Acquired lock on coordinator node 1 for pair [88, val_88]
+Node 1, transaction 108020126384496 has locked keys:, 52, 85, 88
+SENDING commit to participant node 0 for txn 108020126384496
+SENDING commit to participant node 2 for txn 108020126384496
+Putting on coordinator node 1 for key [52]
+Putting on coordinator node 1 for key [85]
+Putting on coordinator node 1 for key [88]
+Releasing lock on coordinator node 1 for key [52]
+Releasing lock on coordinator node 1 for key [85]
+Releasing lock on coordinator node 1 for key [88]
+SENDING commit to participant node 0 for txn 108020126515569
+SENDING commit to participant node 3 for txn 108020126515569
+Success putting 23
+SENDING abort to participant node 2 for txn 108020125860199
+SENDING abort to participant node 3 for txn 108020125860199
+Acquired lock on coordinator node 1 for pair [76, val_76]
+Node 1, transaction 108020191461746 has locked keys:, 76
+SENDING commit to participant node 0 for txn 108020191461746
+Putting on coordinator node 1 for key [76]
+Releasing lock on coordinator node 1 for key [76]
+All-locked unsuccessful on participant node 1, txn_id 108161290797931
+server is ABORTING and calling handle_abort with txn 108161290797931
+entering handle_abort for node 1
+Abort for txn 108161290797931 complete
+Acquired lock on coordinator node 1 for pair [17, val_17]
+Node 1, transaction 108020191592819 has locked keys:, 17
+SENDING commit to participant node 2 for txn 108020191592819
+Putting on coordinator node 1 for key [17]
+Releasing lock on coordinator node 1 for key [17]
+server is PREPARING and calling handle_prepare with txn 108161356399468
+Acquired lock on participant node 1 for pair [77, val_77]
+Node 1, transaction 108161356399468 has locked keys: 77, 
+server is COMMITTING and calling handle_commit with txn 108161356399468
+Putting on participant node 1 for key [77]
+Releasing lock on participant node 1 for key [77]
+Attempting multiput: 61 val_61, 27 val_27, 43 val_43, 
+server is PREPARING and calling handle_prepare with txn 108161356465005
+Acquired lock on coordinator node 1 for pair [61, val_61]
+Node 1, transaction 108020191723892 has locked keys:, 61
+SENDING commit to participant node 0 for txn 108020191723892
+SENDING commit to participant node 2 for txn 108020191723892
+SENDING commit to participant node 3 for txn 108020191723892
+Putting on coordinator node 1 for key [61]
+Releasing lock on coordinator node 1 for key [61]
+Attempting multiput: 6 val_6, 32 val_32, 42 val_42, 
+Acquired lock on coordinator node 1 for pair [32, val_32]
+Node 1, transaction 108020191789429 has locked keys:, 32
+SENDING commit to participant node 0 for txn 108020191789429
+SENDING commit to participant node 2 for txn 108020191789429
+SENDING commit to participant node 3 for txn 108020191789429
+Putting on coordinator node 1 for key [32]
+Releasing lock on coordinator node 1 for key [32]
+Attempting multiput: 87 val_87, 58 val_58, 
+SENDING commit to participant node 0 for txn 108020191854966
+SENDING commit to participant node 2 for txn 108020191854966
+SENDING commit to participant node 3 for txn 108020191854966
+Success multiputting 87 val_87, 58 val_58, 
+Attempting multiput: 37 val_37, 75 val_75, 26 val_26, 
+Acquired lock on coordinator node 1 for pair [37, val_37]
+Node 1, transaction 108020191920503 has locked keys:, 37
+SENDING commit to participant node 0 for txn 108020191920503
+SENDING commit to participant node 2 for txn 108020191920503
+SENDING commit to participant node 3 for txn 108020191920503
+Putting on coordinator node 1 for key [37]
+Releasing lock on coordinator node 1 for key [37]
+Attempting multiput: 67 val_67, 99 val_99, 1 val_1, 
+Acquired lock on coordinator node 1 for pair [1, val_1]
+Node 1, transaction 108020191986040 has locked keys:, 1
+SENDING commit to participant node 0 for txn 108020191986040
+SENDING commit to participant node 2 for txn 108020191986040
+SENDING commit to participant node 3 for txn 108020191986040
+Putting on coordinator node 1 for key [1]
+Releasing lock on coordinator node 1 for key [1]
+Acquired lock on coordinator node 1 for pair [9, val_9]
+Node 1, transaction 108020192051577 has locked keys:, 9
+SENDING commit to participant node 2 for txn 108020192051577
+Putting on coordinator node 1 for key [9]
+Releasing lock on coordinator node 1 for key [9]
+Attempting multiput: 91 val_91, 45 val_45, 29 val_29, 
+Acquired lock on coordinator node 1 for pair [29, val_29]
+Acquired lock on coordinator node 1 for pair [45, val_45]
+Node 1, transaction 108020192051578 has locked keys:, 29, 45
+SENDING commit to participant node 0 for txn 108020192051578
+SENDING commit to participant node 2 for txn 108020192051578
+SENDING commit to participant node 3 for txn 108020192051578
+Putting on coordinator node 1 for key [29]
+Putting on coordinator node 1 for key [45]
+Releasing lock on coordinator node 1 for key [29]
+Releasing lock on coordinator node 1 for key [45]
+Acquired lock on coordinator node 1 for pair [41, val_41]
+Node 1, transaction 108020192117115 has locked keys:, 41
+SENDING commit to participant node 2 for txn 108020192117115
+Putting on coordinator node 1 for key [41]
+Releasing lock on coordinator node 1 for key [41]
+SENDING commit to participant node 2 for txn 108020192248188
+SENDING commit to participant node 3 for txn 108020192248188
+Success putting 14
+Attempting multiput: 0 val_0, 4 val_4, 
+Acquired lock on coordinator node 1 for pair [0, val_0]
+Acquired lock on coordinator node 1 for pair [4, val_4]
+Node 1, transaction 108020192313725 has locked keys:, 0, 4
+SENDING commit to participant node 0 for txn 108020192313725
+Putting on coordinator node 1 for key [0]
+Putting on coordinator node 1 for key [4]
+Releasing lock on coordinator node 1 for key [0]
+Releasing lock on coordinator node 1 for key [4]
+All-locked unsuccessful on participant node 1, txn_id 108161356465005
+server is ABORTING and calling handle_abort with txn 108161356465005
+entering handle_abort for node 1
+Abort for txn 108161356465005 complete
+server is PREPARING and calling handle_prepare with txn 108161422066542
+Acquired lock on participant node 1 for pair [96, val_96]
+Node 1, transaction 108161422066542 has locked keys: 96, 
+server is COMMITTING and calling handle_commit with txn 108161422066542
+Putting on participant node 1 for key [96]
+Releasing lock on participant node 1 for key [96]
+server is PREPARING and calling handle_prepare with txn 108161422197615
+Acquired lock on participant node 1 for pair [93, val_93]
+Node 1, transaction 108161422197615 has locked keys: 93, 
+server is COMMITTING and calling handle_commit with txn 108161422197615
+Putting on participant node 1 for key [93]
+Releasing lock on participant node 1 for key [93]
+server is PREPARING and calling handle_prepare with txn 108161422459760
+Acquired lock on participant node 1 for pair [33, val_33]
+Node 1, transaction 108161422459760 has locked keys: 33, 
+server is COMMITTING and calling handle_commit with txn 108161422459760
+Putting on participant node 1 for key [33]
+Releasing lock on participant node 1 for key [33]
+server is PREPARING and calling handle_prepare with txn 108161422590834
+Acquired lock on participant node 1 for pair [21, val_21]
+Node 1, transaction 108161422590834 has locked keys: 21, 
+Acquired lock on participant node 1 for pair [68, val_68]
+Node 1, transaction 108161422590834 has locked keys: 21, 68, 
+server is COMMITTING and calling handle_commit with txn 108161422590834
+Putting on participant node 1 for key [21]
+Putting on participant node 1 for key [68]
+Releasing lock on participant node 1 for key [21]
+Releasing lock on participant node 1 for key [68]
+server is PREPARING and calling handle_prepare with txn 108161422656371
+Acquired lock on participant node 1 for pair [48, val_48]
+Node 1, transaction 108161422656371 has locked keys: 48, 
+Acquired lock on participant node 1 for pair [73, val_73]
+Node 1, transaction 108161422656371 has locked keys: 48, 73, 
+server is COMMITTING and calling handle_commit with txn 108161422656371
+Putting on participant node 1 for key [48]
+Putting on participant node 1 for key [73]
+Releasing lock on participant node 1 for key [48]
+Releasing lock on participant node 1 for key [73]
+server is PREPARING and calling handle_prepare with txn 108161422656372
+Acquired lock on participant node 1 for pair [41, val_41]
+Node 1, transaction 108161422656372 has locked keys: 41, 
+Acquired lock on participant node 1 for pair [84, val_84]
+Node 1, transaction 108161422656372 has locked keys: 41, 84, 
+server is COMMITTING and calling handle_commit with txn 108161422656372
+Putting on participant node 1 for key [41]
+Putting on participant node 1 for key [84]
+Releasing lock on participant node 1 for key [41]
+Releasing lock on participant node 1 for key [84]
+server is PREPARING and calling handle_prepare with txn 108161422852982
+Acquired lock on participant node 1 for pair [60, val_60]
+Node 1, transaction 108161422852982 has locked keys: 60, 
+server is COMMITTING and calling handle_commit with txn 108161422852982
+Putting on participant node 1 for key [60]
+Releasing lock on participant node 1 for key [60]
+server is PREPARING and calling handle_prepare with txn 108161422852983
+Acquired lock on participant node 1 for pair [64, val_64]
+Node 1, transaction 108161422852983 has locked keys: 64, 
+server is COMMITTING and calling handle_commit with txn 108161422852983
+Putting on participant node 1 for key [64]
+Releasing lock on participant node 1 for key [64]
+server is PREPARING and calling handle_prepare with txn 108161422918520
+Acquired lock on participant node 1 for pair [20, val_20]
+Node 1, transaction 108161422918520 has locked keys: 20, 
+server is COMMITTING and calling handle_commit with txn 108161422918520
+Putting on participant node 1 for key [20]
+Releasing lock on participant node 1 for key [20]
+server is PREPARING and calling handle_prepare with txn 108161422984057
+Acquired lock on participant node 1 for pair [29, val_29]
+Node 1, transaction 108161422984057 has locked keys: 29, 
+server is COMMITTING and calling handle_commit with txn 108161422984057
+Putting on participant node 1 for key [29]
+Releasing lock on participant node 1 for key [29]
+server is PREPARING and calling handle_prepare with txn 108171487871880
+Acquired lock on participant node 1 for pair [17, val_17]
+Node 1, transaction 108171487871880 has locked keys: 17, 
+Acquired lock on participant node 1 for pair [21, val_21]
+Node 1, transaction 108171487871880 has locked keys: 17, 21, 
+server is COMMITTING and calling handle_commit with txn 108171487871880
+Putting on participant node 1 for key [17]
+Putting on participant node 1 for key [21]
+Releasing lock on participant node 1 for key [17]
+Releasing lock on participant node 1 for key [21]
