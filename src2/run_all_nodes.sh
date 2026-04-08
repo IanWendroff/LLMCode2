@@ -4,8 +4,8 @@ set -euo pipefail
 # Launch all 4 DHT nodes from one machine via SSH.
 #
 # Usage:
-#   ./run_all_nodes.sh quick <your_user>
-#   ./run_all_nodes.sh stress <your_user>
+#   ./run_all_nodes.sh quick <your_user> [5|10]
+#   ./run_all_nodes.sh stress <your_user> [5|10]
 #
 # Modes:
 #   quick  -> threads=1, ops=5
@@ -18,12 +18,13 @@ set -euo pipefail
 #   node 3 -> 128.180.120.68
 
 if [[ $# -lt 2 ]]; then
-  echo "Usage: $0 <quick|stress> <ssh_user>"
+  echo "Usage: $0 <quick|stress> <ssh_user> [5|10]"
   exit 1
 fi
 
 MODE="$1"
 SSH_USER="$2"
+KEY_RANGE="${3:-5}"
 BASE_DIR="/home/itw227/CSE376/LLMCode2/src2"
 HOSTS=("128.180.120.65" "128.180.120.66" "128.180.120.77" "128.180.120.68")
 SSH_OPTS=(
@@ -49,14 +50,23 @@ case "$MODE" in
     ;;
 esac
 
-echo "Launching mode=$MODE (threads=$THREADS ops=$OPS)"
+case "$KEY_RANGE" in
+  5|10)
+    ;;
+  *)
+    echo "key_range must be 5 or 10"
+    exit 1
+    ;;
+esac
+
+echo "Launching mode=$MODE (threads=$THREADS ops=$OPS key_range=$KEY_RANGE)"
 
 launch_node() {
   local i="$1"
   local host="${HOSTS[$i]}"
   echo "[$host] starting node $i"
   ssh -n "${SSH_OPTS[@]}" "${SSH_USER}@${host}" \
-    "cd \"$BASE_DIR\" && make >/dev/null && nohup ./my_program $i $THREADS $OPS > node${i}.log 2>&1 < /dev/null &" \
+    "cd \"$BASE_DIR\" && make >/dev/null && nohup ./my_program $i $THREADS $OPS $KEY_RANGE > node${i}.log 2>&1 < /dev/null &" \
     && echo "[$host] started node $i" \
     || echo "[$host] failed to start node $i (check SSH key/auth/path)"
 }

@@ -2,34 +2,34 @@
 
 2. Run make
 
-3. On the nodes run ```./my_program <node#> <#threads> <#operations>```, like so:
+3. On the nodes run ```./my_program <node#> <#threads> <#operations> [key_range]```, like so:
 
-Node 0: ./my_program 0 3 1000 > node0.log 2>&1 & 
+Node 0: ./my_program 0 3 1000 10 > node0.log 2>&1 & 
 Means node 0, with 3 threads, running 1000 total operations (~333/thread)
 
-Node 1: ./my_program 1 3 1000 > node1.log 2>&1 &
+Node 1: ./my_program 1 3 1000 10 > node1.log 2>&1 &
 
-Node 2: ./my_program 2 3 1000 > node2.log 2>&1 &
+Node 2: ./my_program 2 3 1000 10 > node2.log 2>&1 &
 
-Node 3: ./my_program 3 3 1000 > node3.log 2>&1 &
+Node 3: ./my_program 3 3 1000 10 > node3.log 2>&1 &
 
 Change the number of threads and number of operations as you please. 
 
-To change the keyranges, add or remove key ranges in main.cpp, line 135 (like in the commented out line above it). 
+To change the key range, pass it as the optional 4th argument (recommended values for quick checks: 5 or 10).
 
 Make sure you run on the correct nodes (eg, "./my_program 0 3 1000" on the node at nodes[0] you specified in network.cpp)
 
 You should be able to see standard output and errors from each node in the nodeX.log files that will be created 
 
 
-4. These commands should execute correctly, with key_ranges = {100}:
-Node 0: ./my_program 0 1 5 > node0.log 2>&1 & 
+4. These commands should execute correctly (example with key_range=5):
+Node 0: ./my_program 0 1 5 5 > node0.log 2>&1 & 
 
-Node 1: ./my_program 1 1 5 > node1.log 2>&1 &
+Node 1: ./my_program 1 1 5 5 > node1.log 2>&1 &
 
-Node 2: ./my_program 2 1 5 > node2.log 2>&1 &
+Node 2: ./my_program 2 1 5 5 > node2.log 2>&1 &
 
-Node 3: ./my_program 3 1 5 > node3.log 2>&1 &
+Node 3: ./my_program 3 1 5 5 > node3.log 2>&1 &
 
 These should cause the nodes to hang and never complete:
 Node 0: ./my_program 0 3 1000 > node0.log 2>&1 & 

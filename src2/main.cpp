@@ -111,13 +111,21 @@ int main(int argc, char** argv)
 
     if (argc < 4) {
         std::cerr << "Usage: " << argv[0]
-                  << " <node_id> <num_threads> <num_ops>\n";
+                  << " <node_id> <num_threads> <num_ops> [key_range]\n";
         return 1;
     }
 
     self_id = std::stoi(argv[1]);
     int num_threads = std::stoi(argv[2]);
     int num_ops = std::stoi(argv[3]);
+    int key_range = 100;
+    if (argc >= 5) {
+        key_range = std::stoi(argv[4]);
+        if (key_range <= 0) {
+            std::cerr << "key_range must be > 0\n";
+            return 1;
+        }
+    }
 
     load_config();
     dht_init(self_id);
@@ -131,8 +139,7 @@ int main(int argc, char** argv)
     distributed_barrier();
     std::cout << "[Node " << self_id << "] Passed barrier\n";
 
-    // std::vector<int> key_ranges = {10, 100, 1000, 10000};
-    std::vector<int> key_ranges = {100};
+    std::vector<int> key_ranges = {key_range};
 
     for (int key_range : key_ranges) {
 
